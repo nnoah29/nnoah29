@@ -6,7 +6,10 @@
 .main-hero-area {
     padding-top: 15vh;
     background: var(--primary-color);
-    background: rgba(244, 243, 237, 0.85);
+    background: #E6E4E0;
+    background-image: url("../../../assets/images/bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
 }
 
@@ -254,7 +257,7 @@
     position: relative;
     right: 4vw;
     top: 14vh;
-    display: none;
+
 }
 
 /* Infinite Scroll Styles */
