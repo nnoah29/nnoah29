@@ -6,7 +6,7 @@
 .main-hero-area {
     padding-top: 15vh;
     background: var(--primary-color);
-    background: #E6E4E0;
+    /*background: #E6E4E0;*/
     /*background-image: url("../../../assets/images/bg.png");*/
     background-position: center;
     background-repeat: no-repeat;
@@ -336,12 +336,14 @@
 
 @media (max-width: 1000px) {
 
-    .main-container,
-    .story {
+    .main-container{
         display: none;
     }
 
+
+
     .nido,
+    .story,
     .cv {
         left: 0;
         right: 0;
@@ -349,8 +351,12 @@
         text-align: center;
         display: block;
         width: 100%;
-        margin: 20px auto;
+        margin: auto auto;
     }
+    .cv {
+        margin: 3vh auto;
+    }
+
 }
 
 @media (max-height: 400px) {
