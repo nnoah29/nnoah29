@@ -253,7 +253,8 @@
 .story {
     position: relative;
     right: 4vw;
-    top: 30vh;
+    top: 14vh;
+    display: none;
 }
 
 /* Infinite Scroll Styles */
@@ -278,6 +279,7 @@
 }
 
 .scroll-1 {
+    left: -15vw;
     transform: rotate(50deg);
 }
 
