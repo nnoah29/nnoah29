@@ -334,6 +334,15 @@
     color: var(--primary-color);
 }
 
+.title {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+.iam {
+    display: none;
+}
+
 @media (max-width: 1000px) {
 
     .main-container{
@@ -355,6 +364,9 @@
     }
     .cv {
         margin: 3vh auto;
+    }
+    .iam {
+        display: inline;
     }
 
 }
