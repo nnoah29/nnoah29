@@ -1,0 +1,84 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 06.SERVICE CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+.services-area {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: var(--primary-color);
+
+}
+
+.service-item {
+    position: relative;
+    padding: 60px 40px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: var(--lighter-color);
+    margin-bottom: 30px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    height: 32vh;
+}
+
+
+.service-item:hover.service-item h5 {
+    color: var(--primary-color);
+    background: var(--main-color);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+
+.service-item h5 {
+    /*margin-bottom: 60px;*/
+    color: rgb(119, 119, 125);
+    font-family: var(--text-font);
+    border: 1px solid;
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.service-item p {
+    margin-bottom: 0;
+    color: rgb(119, 119, 125);
+}
+
+.service-item h4 {
+    color: var(--main-color);
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.service-item i {
+    position: absolute;
+    font-size: 60px;
+    color: var(--main-color);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    top: 18%;
+    right: 4%;
+    font-size: 30px;
+}
+
+.service-item:hover {
+    border-color: var(--primary-color);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.service-item:hover.service-item i {
+    rotate: 45deg;
+}
+
+.service-item:hover .details-btn {
+    color: var(--black-color);
+    background: var(--primary-color);
+}

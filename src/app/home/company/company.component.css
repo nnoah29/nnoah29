@@ -1,0 +1,116 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 12.CLIENTS CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+.client-logo-area {
+    padding-top: 20px;
+}
+
+.client-logo-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+
+.client-logo-wrap .client-logo-item {
+    width: calc(20% - 60px);
+    margin: 0 30px 10px;
+}
+
+/*
+* ----------------------------------------------------------------------------------------
+* COMPANY DESIGN CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.company-design-area {
+    padding: 100px 0px;
+}
+
+.company-design-area h2 {
+    text-transform: uppercase;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+    font-weight: 500;
+}
+
+.scroller__inner {
+    padding-block: 16px;
+    padding-block: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 80px;
+    gap: 5rem;
+}
+
+.scroller__inner img {
+    margin-right: 30px;
+}
+
+.scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: -webkit-linear-gradient(left,
+            transparent,
+            white 20%,
+            white 80%,
+            transparent);
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+    --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+    --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+    --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+    --_animation-duration: 60s;
+}
+
+@-webkit-keyframes scroll {
+    to {
+        -webkit-transform: translate(calc(-50% - 0.5rem));
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+@keyframes scroll {
+    to {
+        -webkit-transform: translate(calc(-50% - 0.5rem));
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}

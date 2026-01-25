@@ -1,0 +1,355 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 04.HERO CSS STYLE (Renamed from HEADER)
+* ----------------------------------------------------------------------------------------
+*/
+.main-hero-area {
+    padding-top: 15vh;
+    background: var(--primary-color);
+    background: rgba(244, 243, 237, 0.85);
+    height: 100vh;
+}
+
+
+.hero-content h2 {
+    font-weight: 500;
+    font-size: clamp(14vh, 18vh, 21vh);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--main-color);
+}
+
+.hero-content p {
+    color: var(--main-color);
+}
+
+.hero-btns {
+    margin-top: 30px;
+}
+
+.hero-content .hero-btns .read-more {
+    margin-top: 15px;
+    text-decoration: underline;
+}
+
+.author-image-part {
+    z-index: 1;
+    overflow: hidden;
+    max-width: 575px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    border-radius: 0 0 580px 565px;
+}
+
+.author-image-part .bg-circle {
+    z-index: -2;
+    width: 425px;
+    height: 425px;
+    position: absolute;
+    left: 5%;
+    top: 4%;
+    border-radius: 50%;
+    background: var(--black-color);
+}
+
+
+.author-image-part .progress-shape {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-counter-area {
+    margin-top: 60px;
+}
+
+
+.counter-item {
+    text-align: center;
+}
+
+.counter-title {
+    color: var(--primary-color);
+}
+
+.hero-counter-area .count-text {
+    line-height: 1;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.hero-counter-area .count-text.plus:after {
+    content: '+';
+}
+
+.hero-counter-area .count-text.k-plus:after {
+    content: 'k+';
+}
+
+.hero-counter-area .count-text.percent:after {
+    content: '%+';
+}
+
+.hero-counter-area .counter-title {
+    display: block;
+}
+
+@media (orientation: portrait) {
+    .hero-image {
+        display: none;
+    }
+}
+
+
+.hero-image {
+    text-align: center;
+    position: relative;
+    top: 15vh;
+}
+
+
+.sub-hero {
+    background-color: #6a1a21;
+}
+
+.sub-hero-img {
+    height: 100%;
+    width: 100%;
+}
+
+.hero-image img {
+    width: 18vw;
+    text-align: left;
+    border-radius: 20px;
+    /*border-bottom: 5px solid #000000;*/
+    border-right: 5px solid #000000;
+    margin-top: -100px;
+    rotate: 5deg;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.hero-image img:hover {
+    rotate: -0.5deg;
+    -webkit-transition: 0.4s;
+    border-bottom: 5px solid #000000;
+    transition: 0.4s;
+}
+
+
+
+/*Clienti Reviews*/
+
+@media (orientation: portrait) {
+    .clienti-reviews {
+        display: none;
+    }
+}
+
+.clienti-reviews .clienti-profile {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.clienti-reviews .clienti-profile li {
+    flex: 0 0 60px;
+    height: 60px;
+    width: 60px;
+    margin-left: -15px;
+    border-radius: 100%;
+}
+
+.clienti-reviews .clienti-profile li img {
+    border-radius: 100%;
+}
+
+.clienti-reviews .clienti-profile li:first-child {
+    margin-left: 0px;
+}
+
+.clienti-reviews .reviews {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--main-color);
+    display: block;
+    margin-top: 20px;
+}
+
+.clienti-reviews .reviews span {
+    color: #969696;
+}
+
+.clienti-reviews .reviews p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* From 05.ABOUT CSS STYLE - Hero Content */
+.hero-content .job {
+    display: inline-block;
+    background-color: #f5f5f5;
+    padding: 15px 40px;
+    margin-top: 10px;
+}
+
+.hero-content .job span {
+    position: relative;
+    display: inline-block;
+    padding-right: 15px;
+    margin-right: 10px;
+}
+
+.hero-content .job span:last-child {
+    margin: 0px;
+    padding: 0px;
+}
+
+.hero-content .job span:last-child:after {
+    display: none;
+}
+
+.hero-content .job span:after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    background-color: rgba(0, 0, 0, .15);
+    right: 0px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    border-radius: 100%;
+}
+
+.nido {
+    display: inline-block;
+    color: var(--main-color);
+    position: relative;
+    top: 14vh;
+    left: -5vw;
+    font-weight: bold;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    line-height: 1.5;
+
+}
+
+.cv {
+    position: relative;
+    left: -5vw;
+    top: 15vh;
+}
+
+.story {
+    position: relative;
+    right: 4vw;
+    top: 30vh;
+}
+
+/* Infinite Scroll Styles */
+.main-container {
+    position: absolute;
+    right: -16vw;
+    top: 0;
+    width: 60vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.scroll-container {
+    position: absolute;
+    width: 200%;
+    /* Make it wider to cover diagonal */
+}
+
+.scroll-1 {
+    transform: rotate(50deg);
+}
+
+.scroll-2 {
+    left: -15vw;
+    transform: rotate(-55deg);
+    z-index: 10
+}
+
+.text-row {
+    white-space: nowrap;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.infinite-scroll {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.text-scroll {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.text-item {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.star {
+    font-size: 2rem;
+    margin: 10px 30px;
+    color: var(--primary-color);
+}
+
+@media (max-width: 1000px) {
+
+    .main-container,
+    .story {
+        display: none;
+    }
+
+    .nido,
+    .cv {
+        left: 0;
+        right: 0;
+        top: 0;
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-height: 400px) {
+    .hero-image {
+        display: none;
+    }
+}

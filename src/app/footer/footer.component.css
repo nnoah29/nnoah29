@@ -1,0 +1,49 @@
+/*
+* ----------------------------------------------------------------------------------------
+* 14.FOOTER CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+.main-footer {
+    background: var(--primary-color);
+}
+
+.footer-bottom {}
+
+p.copy-left-text {
+    color: var(--main-color);
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 300;
+    -moz-text-align-last: left;
+    text-align-last: left;
+}
+
+p.copy-right-text {
+    color: var(--main-color);
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 300;
+    -moz-text-align-last: right;
+    text-align-last: right;
+}
+
+.footer-top h2 {
+    color: var(--main-color);
+    font-size: clamp(8vh, 10vh, 12vh);
+    line-height: 1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.footer-top {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.footer-top p {
+
+    color: var(--main-color);
+    font-size: 20px;
+    text-align: center;
+}
