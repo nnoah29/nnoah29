@@ -1,17 +1,16 @@
 <section id="home" class="main-hero-area">
-    <!--    <div class="video-bg">-->
-    <!--        <video src="assets/videos/video1.mp4" muted loop autoplay></video>-->
-    <!--    </div>-->
+    <!-- Three.js canvas overlay -->
+    <canvas #threeCanvas class="three-canvas"></canvas>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="hero-content wow fadeInUp text-center delay-0-2s">
+                <div class="hero-content wow fadeInUp text-center delay-0-2s" #heroTitle>
                     <h2>Noah <span class="firstname">TOFFA</span></h2>
                 </div>
             </div>
         </div>
         <div class="row row-2">
-            <div class="col-lg-3  nido">
+            <div class="col-lg-3 nido" #heroLeft>
                 <div class="d-flex flex-column">
                     <div class="hero-content wow fadeInUp delay-0-2s">
                         <span class="">
@@ -26,9 +25,9 @@
 
             </div>
             <div class="col-lg-6 me">
-                <div class="hero-image"><img src="../../../assets/images/about/me_nb.png" alt=""></div>
+                <div class="hero-image" #heroImg><img src="../../../assets/images/about/me_nb.png" alt=""></div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3" #heroRight>
                 <div class="hero-content wow fadeInUp delay-0-4s story">
                     <p> <span class="iam">i am</span> <span class="title">Software Engineer</span> <br>
                         AI-driven. Performance-focused. Designing intelligent systems and user experiences.</p>
@@ -37,7 +36,7 @@
         </div>
     </div>
 
-    <div class="main-container">
+    <div class="main-container" #scrollContainer>
         <div class="scroll-container scroll-1">
             <div class="text-row">
                 <div class="infinite-scroll">
@@ -56,26 +55,6 @@
                 </div>
             </div>
         </div>
-
-<!--        <div class="scroll-container scroll-2">-->
-<!--            <div class="text-row">-->
-<!--                <div class="infinite-scroll">-->
-<!--                    <div class="text-scroll">-->
-<!--                        <ng-container *ngFor="let item of items">-->
-<!--                            <span class="text-item">{{ item }}</span>-->
-<!--                            <span class="star">★</span>-->
-<!--                        </ng-container>-->
-<!--                    </div>-->
-<!--                    <div class="text-scroll">-->
-<!--                        <ng-container *ngFor="let item of items">-->
-<!--                            <span class="text-item">{{ item }}</span>-->
-<!--                            <span class="star">★</span>-->
-<!--                        </ng-container>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
     </div>
 </section>
 

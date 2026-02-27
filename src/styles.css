@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Parallax global GPU hint — applied to all parallax targets */
+[class*="hero-content"],
+[class*="hero-image"],
+[class*="nido"],
+[class*="story"],
+[class*="main-container"],
+[class*="some-word1"],
+[class*="some-word2"],
+[class*="service-item"],
+[class*="testimonial-item"],
+[class*="portfolio-box"],
+[class*="custom-icon"],
+[class*="company-list"],
+[class*="section-title"] {
+    will-change: transform;
+    transition: transform 0.05s linear;
+}
