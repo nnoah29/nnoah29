@@ -33,11 +33,11 @@ export class ServicesComponent implements AfterViewInit, OnDestroy {
   }
 
   private applyParallax(scrollY: number): void {
-    this.applyTranslate(this.sectionTitle, scrollY, 0.12);
+    this.applyTranslate(this.sectionTitle, scrollY, 0.20);
     // Staggered speeds per service item for depth
-    const speeds = [0.10, 0.16, 0.12, 0.18];
+    const speeds = [0.16, 0.24, 0.20, 0.28];
     this.serviceItems.forEach((item, i) => {
-      this.applyTranslate(item, scrollY, speeds[i] ?? 0.12);
+      this.applyTranslate(item, scrollY, speeds[i] ?? 0.18);
     });
   }
 

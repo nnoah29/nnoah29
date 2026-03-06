@@ -30,7 +30,7 @@ export class CompanyComponent implements AfterViewInit, OnDestroy {
   }
 
   private applyParallax(scrollY: number): void {
-    this.applyTranslate(this.companyList, scrollY, 0.06);
+    this.applyTranslate(this.companyList, scrollY, 0.12);
   }
 
   private applyTranslate(

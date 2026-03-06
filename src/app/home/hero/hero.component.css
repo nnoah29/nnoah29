@@ -455,3 +455,78 @@
         display: none;
     }
 }
+
+/* ─────────────────────────────────────────────────────
+   INFINITE GRID BACKGROUND
+───────────────────────────────────────────────────── */
+
+.grid-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    color: var(--main-color, #000);
+}
+
+.grid-svg {
+    width: 100%;
+    height: 100%;
+    animation: gridScroll 6s linear infinite;
+}
+
+/* Scrolls the SVG pattern diagonally */
+@keyframes gridScroll {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(40px, 40px);
+    }
+}
+
+/* Always-on dim layer */
+.grid-dim {
+    opacity: 0.05;
+}
+
+/* Cursor-reveal layer — mask applied inline via Angular binding */
+.grid-reveal {
+    opacity: 0.45;
+}
+
+/* ─────────────────────────────────────────────────────
+   AMBIENT GLOW BLOBS
+───────────────────────────────────────────────────── */
+
+.ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(120px);
+}
+
+.glow-orange {
+    width: 40%;
+    height: 40%;
+    top: -15%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 0%, transparent 70%);
+}
+
+.glow-blue {
+    width: 40%;
+    height: 40%;
+    bottom: -15%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.20) 0%, transparent 70%);
+}
+
+/* Make sure all hero content sits above the grid */
+.main-hero-area>.container,
+.main-hero-area>.main-container {
+    position: relative;
+    z-index: 1;
+}

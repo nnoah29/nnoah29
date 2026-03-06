@@ -47,8 +47,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private applyParallax(scrollY: number): void {
-    this.applyTranslate(this.customIcon, scrollY, 0.1);
-    this.applyTranslate(this.portfolioGrid, scrollY, 0.04);
+    this.applyTranslate(this.customIcon, scrollY, 0.18);
+    this.applyTranslate(this.portfolioGrid, scrollY, 0.08);
   }
 
   private applyTranslate(

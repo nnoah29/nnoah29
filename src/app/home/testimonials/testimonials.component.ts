@@ -33,11 +33,11 @@ export class TestimonialsComponent implements AfterViewInit, OnDestroy {
   }
 
   private applyParallax(scrollY: number): void {
-    this.applyTranslate(this.testiTitle, scrollY, 0.1);
+    this.applyTranslate(this.testiTitle, scrollY, 0.18);
     // Alternating up/down for visual depth between cards
-    const speeds = [0.07, 0.11, 0.06, 0.12, 0.08];
+    const speeds = [0.12, 0.18, 0.10, 0.20, 0.14];
     this.testiItems.forEach((item, i) => {
-      this.applyTranslate(item, scrollY, speeds[i] ?? 0.08);
+      this.applyTranslate(item, scrollY, speeds[i] ?? 0.14);
     });
   }
 

@@ -22,6 +22,7 @@
     "bootstrap": "^5.3.6",
     "gsap": "^3.13.0",
     "jquery": "^3.7.1",
+    "pagepiling.js": "^1.5.6",
     "rxjs": "~7.8.0",
     "three": "^0.183.1",
     "tslib": "^2.3.0",

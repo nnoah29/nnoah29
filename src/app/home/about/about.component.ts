@@ -32,9 +32,9 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   }
 
   private applyParallax(scrollY: number): void {
-    this.applyTranslate(this.aboutTitle, scrollY, 0.15);
-    this.applyTranslate(this.aboutSub, scrollY, 0.10);
-    this.applyTranslate(this.aboutStory, scrollY, 0.08);
+    this.applyTranslate(this.aboutTitle, scrollY, 0.22);
+    this.applyTranslate(this.aboutSub, scrollY, 0.16);
+    this.applyTranslate(this.aboutStory, scrollY, 0.13);
   }
 
   private applyTranslate(
