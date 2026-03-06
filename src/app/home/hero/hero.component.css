@@ -11,6 +11,7 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    position: relative;
 }
 
 
@@ -497,6 +498,14 @@
 /* ─────────────────────────────────────────────────────
    AMBIENT GLOW BLOBS
 ───────────────────────────────────────────────────── */
+
+.glow-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
 
 .ambient-glow {
     position: absolute;
