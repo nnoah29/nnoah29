@@ -421,3 +421,17 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     visibility: visible;
 }
+
+/* ─────────────────────────────────────────────────────
+   GLOWING DIVIDER
+───────────────────────────────────────────────────── */
+.glowing-divider {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 1), #ffffff, rgba(249, 115, 22, 1), transparent);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.9), 0 0 30px rgba(249, 115, 22, 0.9), 0 0 10px #ffffff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
