@@ -40,6 +40,10 @@ export class CompanyComponent implements AfterViewInit, OnDestroy {
   ): void {
     if (!ref?.nativeElement) return;
     const el = ref.nativeElement;
+    if (window.innerWidth <= 768) {
+      el.style.transform = 'none';
+      return;
+    }
     const top = el.getBoundingClientRect().top + scrollY - window.innerHeight / 2;
     const offset = this.parallax.calcOffset(scrollY, top, speed);
     el.style.transform = `translateY(${-offset}px)`;
