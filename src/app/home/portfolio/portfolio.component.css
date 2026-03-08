@@ -1,222 +1,252 @@
-/*
-* ----------------------------------------------------------------------------------------
-* 09.PORTFOLIO CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
+/* ==============================================
+* PORTFOLIO — Brutalist Minimalism (High Contrast)
+* ============================================== */
+
 .projects-area {
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-
-.filter ul {
-    margin: 0;
-    padding: 0
-}
-
-.filter ul li {
+    padding: 120px 0;
     position: relative;
-    display: inline-block;
-    border: 1px dashed black;
-    border-radius: 2em;
-    margin: 0 7px 10px 0;
-    padding: 0.5em 1em;
-    font-size: 0.9em;
-    font-family: "Roboto Mono", monospace;
-    color: black;
-    cursor: pointer;
-    -webkit-transition: linear 0.1s;
-    transition: linear 0.1s
+    background-color: var(--body-background, #000);
 }
 
-.filter ul li:hover,
-.filter ul li.mixitup-control-active {
-    background: black;
-    color: white
-}
-
-.theme-dark .filter ul li {
-    border-color: white;
-    color: white
-}
-
-.theme-dark .filter ul li:hover,
-.theme-dark .filter ul li.mixitup-control-active {
-    background: white;
-    color: black
-}
-
-.portfolio-box {
+.portfolio-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
     position: relative;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    overflow: hidden;
-    border-radius: 0.5em
+    z-index: 10;
 }
 
-.portfolio-box:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.3), transparent);
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+.portfolio-container-inner {
     width: 100%;
-    height: 100%;
-    -webkit-transition: ease-out 0.16s;
-    transition: ease-out 0.16s
 }
 
-.portfolio-box img {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    width: 100%;
-    -webkit-transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)
+/* ── Section Header ────────────────────────── */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 10;
 }
 
-.portfolio-box .portfolio-category {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.2);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    border-radius: 2em;
-    padding: 0.5em 1em;
-    color: white;
-    font-weight: 400;
-    font-size: 0.9em;
+.section-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--main-color, #fff);
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 0.5px
-}
-
-.portfolio-box .portfolio-caption {
-    z-index: 1;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    visibility: hidden;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    margin-bottom: -6px;
-    padding: 0 30px 24px;
-    -webkit-transition: ease-out 0.5s;
-    transition: ease-out 0.5s
-}
-
-.portfolio-box .portfolio-caption * {
     margin: 0;
-    color: white;
-    font-size: 30px;
+    line-height: 1.2;
+}
+
+.stroke-text {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--primary-color);
+    color: transparent;
+}
+
+/* ── Projects Grid ────────────────────────── */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0;
+    position: relative;
+    z-index: 10;
+    border-top: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* ── Project Card (Brutalist) ────────── */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+    background: transparent;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0s, color 0s;
+    overflow: hidden;
+}
+
+/* Color Inversion on Hover */
+.project-card:hover {
+    background-color: var(--primary-color);
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/* ── Header Row (Icon + Title) ────────────────── */
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* ── Icon ─────────────────────────────────── */
+.card-icon {
+    position: relative;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--primary-color);
+}
+
+.project-card:hover .card-icon {
+    color: var(--main-color);
+}
+
+::ng-deep .card-icon svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    stroke-width: 1.5;
+}
+
+/* ── Title ───────────────────── */
+.card-title {
+    position: relative;
+    z-index: 10;
+    font-family: var(--title-font, "Oswald", sans-serif);
+    font-size: 1.5rem;
     font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    -webkit-transition: linear 0.06s;
-    transition: linear 0.06s
+    color: var(--primary-color);
+    margin: 0;
+    margin-left: 16px;
+    line-height: 1;
 }
 
-.portfolio-box .portfolio-caption *:hover {
-    text-shadow: 0 0 white
+.project-card:hover .card-title {
+    color: var(--main-color);
 }
 
-.portfolio-box:hover:after {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+/* ── Description ──────────────────────────── */
+.card-desc {
+    position: relative;
+    z-index: 10;
+    font-family: var(--text-font, "Poppins", sans-serif);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+    /* Pushes badges/actions to bottom */
+    text-transform: uppercase;
 }
 
-.portfolio-box:hover img {
-    -webkit-transform: scale(1.04);
-    transform: scale(1.04);
-    -webkit-filter: blur(1.5px);
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="1.5" /></filter></svg>#filter');
-    filter: blur(1.5px)
+.project-card:hover .card-desc {
+    color: var(--main-color);
 }
 
-.portfolio-box:hover .portfolio-caption {
-    visibility: visible;
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    margin-bottom: 0
+/* ── Tech Badges ──────────────────────────── */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 10;
 }
 
-
-.single-project-page-right,
-.single-project-page-left {
-    border: 1px solid rgba(0, 0, 0, 0.05);
+.badge {
+    font-family: var(--title-font, "Oswald", sans-serif);
+    padding: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    white-space: nowrap;
+    letter-spacing: 1px;
 }
 
-.single-project-page-design {
-    padding-top: 30px;
+.project-card:hover .badge {
+    color: var(--main-color);
 }
 
-.single-project-image img {
-    width: 100%;
+/* ── Card Action (View Project) ────────────── */
+.card-action {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--primary-color);
+    font-family: var(--title-font, "Oswald", sans-serif);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+    transition: padding 0.2s ease;
 }
 
-.single-info h3 {
-    font-size: 20px;
+.card-action svg {
+    transition: transform 0.2s ease;
 }
 
-.single-image {
-    margin-bottom: 30px;
+.project-card:hover .card-action {
+    color: var(--main-color);
+    border-top-color: var(--main-color);
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
-.single-info {
-    padding-bottom: 30px;
+.project-card:hover .card-action svg {
+    transform: translateX(4px);
 }
 
-.single-info:last-child {
-    padding-bottom: 0px;
+/* ── Link ─────────────────────────────────── */
+.absolute-link {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    cursor: pointer;
 }
 
-.single-info p {
-    margin-bottom: 0;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
-.project-image {
-    margin-bottom: 45px;
-}
-
-.single-project-item {
-    padding: 30px;
+/* ── Shared States (Loading, Error, Refresh) ──────────────── */
+.loading-state,
+.error-state,
+.empty-state {
+    padding: 80px 0;
+    text-align: center;
+    font-family: var(--title-font, "Oswald", sans-serif);
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
     border: 1px solid var(--border-color);
 }
 
-/* Dynamic Portfolio Additions */
-.project-description {
-    font-size: 14px;
-    margin-top: 8px;
-    line-height: 1.4;
-    opacity: 0.9;
-}
-
-.project-meta {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-    font-size: 13px;
-    flex-wrap: wrap;
-}
-
-.project-meta .stars,
-.project-meta .technologies {
-    display: inline-block;
-    padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 12px;
-    color: white;
-}
-
-.spinner-border {
-    width: 3rem;
-    height: 3rem;
+.error-state {
+    color: #ff3333;
+    border-color: #ff3333;
 }
