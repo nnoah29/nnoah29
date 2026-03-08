@@ -8,7 +8,6 @@ from models.portfolio import Project
 
 load_dotenv()
 
-
 class GitHubService:
     """Service to interact with GitHub API — starred repos"""
 
