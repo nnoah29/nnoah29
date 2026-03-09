@@ -1,13 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  NgZone,
-  OnDestroy,
-  ViewChild,
-} from '@angular/core';
-import { Subscription } from 'rxjs';
-import { ParallaxService } from '../../shared/services/parallax.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-company',
@@ -16,40 +7,4 @@ import { ParallaxService } from '../../shared/services/parallax.service';
   templateUrl: './company.component.html',
   styleUrl: './company.component.css',
 })
-export class CompanyComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('companyList', { static: false }) companyList!: ElementRef<HTMLElement>;
-
-  private sub!: Subscription;
-
-  constructor(private parallax: ParallaxService, private zone: NgZone) { }
-
-  ngAfterViewInit(): void {
-    this.sub = this.parallax.getScroll$().subscribe((scrollY) => {
-      this.zone.runOutsideAngular(() => this.applyParallax(scrollY));
-    });
-  }
-
-  private applyParallax(scrollY: number): void {
-    this.applyTranslate(this.companyList, scrollY, 0.12);
-  }
-
-  private applyTranslate(
-    ref: ElementRef<HTMLElement> | undefined,
-    scrollY: number,
-    speed: number
-  ): void {
-    if (!ref?.nativeElement) return;
-    const el = ref.nativeElement;
-    if (window.innerWidth <= 768) {
-      el.style.transform = 'none';
-      return;
-    }
-    const top = el.getBoundingClientRect().top + scrollY - window.innerHeight / 2;
-    const offset = this.parallax.calcOffset(scrollY, top, speed);
-    el.style.transform = `translateY(${-offset}px)`;
-  }
-
-  ngOnDestroy(): void {
-    this.sub?.unsubscribe();
-  }
-}
+export class CompanyComponent { }
