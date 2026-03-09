@@ -54,7 +54,8 @@
                     </div>
 
                     <!-- Hidden Link Wrapper covering the whole item -->
-                    <a [href]="project.homepage || project.url" target="_blank" class="absolute-link">
+                    <a [href]="project.homepage || project.url" target="_blank" rel="noopener noreferrer"
+                        class="absolute-link">
                         <span class="visually-hidden">View {{ project.name }}</span>
                     </a>
                 </div>
