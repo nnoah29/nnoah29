@@ -25,7 +25,7 @@ export interface PortfolioResponse {
     providedIn: 'root'
 })
 export class PortfolioService {
-    private apiUrl = 'http://localhost:8001/api/portfolio';
+    private apiUrl = 'https://nnoah29-backend.vercel.app/api/portfolio';
 
     constructor(private http: HttpClient) { }
 
