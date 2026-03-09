@@ -7,15 +7,13 @@
     background: var(--primary-color);
 }
 
-.footer-bottom {}
 
 p.copy-left-text {
     color: var(--main-color);
     font-size: 12px;
     line-height: 20px;
     font-weight: 300;
-    -moz-text-align-last: left;
-    text-align-last: left;
+    text-align: left;
 }
 
 p.copy-right-text {
@@ -23,8 +21,7 @@ p.copy-right-text {
     font-size: 12px;
     line-height: 20px;
     font-weight: 300;
-    -moz-text-align-last: right;
-    text-align-last: right;
+    text-align: right;
 }
 
 .footer-top h2 {

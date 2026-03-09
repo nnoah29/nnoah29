@@ -242,9 +242,11 @@ Version      : 1.0
         overflow-x: hidden;
 
     }
-.single-page-hero-area h2 {
+
+    .single-page-hero-area h2 {
         font-size: 90px;
     }
+
     .blog-post-caption {
         padding-left: 0;
         padding-top: 30px;
@@ -281,13 +283,14 @@ Version      : 1.0
     }
 
     p.copy-left-text {
-
-        text-align-last: center;
+        text-align: center;
         margin-top: 60px;
+        margin-bottom: 15px;
+        /* Added spacing between left and right stacked text */
     }
 
     p.copy-right-text {
-        text-align-last: center;
+        text-align: center;
     }
 
     .footer-top h2 {
