@@ -447,6 +447,34 @@
         display: inline;
     }
 
+    .photo-o {
+        display: inline-block;
+        color: transparent !important;
+        -webkit-text-fill-color: transparent !important;
+        -webkit-text-stroke: 0 transparent !important;
+        /* Hides any text outline */
+        background-image: url('../../../assets/images/about/me_nb.png');
+        background-size: cover;
+        background-position: center 20%;
+        border-radius: 50px;
+        /* Rounded rectangle (pill shape) */
+        width: 0.5em;
+        /* Narrower than height to make a rectangle */
+        height: 0.83em;
+        /* Taller to match the letter 'O' vertically */
+        background-repeat: no-repeat;
+        vertical-align: baseline;
+        /* changed from middle to baseline */
+        transform: translateY(0.0em);
+        /* move it up further */
+        /* Align correctly with N and a */
+        margin: 0 0.02em;
+        /* Slight spacing */
+        overflow: hidden;
+        /* Hide the literal 'O' character text perfectly */
+        border: 2px solid var(--main-color);
+    }
+
 }
 
 @media (max-height: 400px) {
