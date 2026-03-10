@@ -22,6 +22,14 @@
     height: 32vh;
 }
 
+@media (max-width: 768px) {
+    .service-item {
+        padding: 40px 20px;
+        height: auto;
+        min-height: 250px;
+    }
+}
+
 
 .service-item:hover.service-item h5 {
     color: var(--primary-color);

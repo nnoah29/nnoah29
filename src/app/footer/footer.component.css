@@ -36,6 +36,8 @@ p.copy-right-text {
 .footer-top {
     padding-top: 100px;
     padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-top p {
@@ -43,4 +45,102 @@ p.copy-right-text {
     color: var(--main-color);
     font-size: 20px;
     text-align: center;
+}
+
+.main-footer {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────
+   INFINITE GRID BACKGROUND
+───────────────────────────────────────────────────── */
+
+.grid-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    color: var(--main-color, #000);
+}
+
+.grid-svg {
+    width: 100%;
+    height: 100%;
+    animation: gridScroll 6s linear infinite;
+}
+
+@keyframes gridScroll {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(40px, 40px);
+    }
+}
+
+.grid-dim {
+    opacity: 0.05;
+}
+
+.grid-reveal {
+    opacity: 0.45;
+}
+
+/* ─────────────────────────────────────────────────────
+   AMBIENT GLOW BLOBS
+───────────────────────────────────────────────────── */
+
+.glow-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ambient-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(120px);
+}
+
+.glow-orange {
+    width: 40%;
+    height: 40%;
+    top: -15%;
+    right: -10%;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 0%, transparent 70%);
+}
+
+.glow-blue {
+    width: 40%;
+    height: 40%;
+    bottom: -15%;
+    left: -10%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.20) 0%, transparent 70%);
+}
+
+@media (max-width: 768px) {
+    .glow-orange {
+        width: 80%;
+        height: 60%;
+        top: -5%;
+        right: -20%;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.5) 0%, transparent 70%);
+        filter: blur(80px);
+    }
+
+    .glow-blue {
+        width: 80%;
+        height: 60%;
+        bottom: -5%;
+        left: -20%;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.45) 0%, transparent 70%);
+        filter: blur(80px);
+    }
 }
