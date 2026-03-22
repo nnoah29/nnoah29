@@ -48,7 +48,7 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
       el.style.transform = 'none';
       return;
     }
-    const top = el.getBoundingClientRect().top + scrollY - window.innerHeight / 2;
+    const top = el.getBoundingClientRect().top + scrollY - window.innerHeight / 8;
     const offset = this.parallax.calcOffset(scrollY, top, speed);
     el.style.transform = `translateY(${-offset}px)`;
   }

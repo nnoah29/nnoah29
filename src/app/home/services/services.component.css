@@ -19,6 +19,7 @@
     margin-bottom: 30px;
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    min-height: 300px;
     height: 32vh;
 }
 
