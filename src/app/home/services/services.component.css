@@ -1,7 +1,6 @@
 /*
  * ----------------------------------------------------------------------------------------
- * 06.SERVICE CSS STYLE — Light theme · GPU-optimized
- * Toutes les animations utilisent transform/opacity uniquement (zéro reflow)
+ * 06.SERVICE CSS STYLE — Light theme (inverted)
  * ----------------------------------------------------------------------------------------
  */
 
@@ -9,17 +8,21 @@
     padding-top: 120px;
     padding-bottom: 120px;
     background: var(--primary-color);
+    /* #d0cfca — beige/crème */
     position: relative;
     overflow: hidden;
 }
 
-/* Grain texture overlay */
+/* Subtle grain texture overlay — Hardware accelerated so it doesn't cause overCPU on hover repaints */
 .services-noise {
     position: absolute;
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 0;
+    transform: translateZ(0);
+    /* Hardware acceleration to prevent CPU spikes */
+    will-change: transform;
 }
 
 /* ── Header ──────────────────────────────────────────── */
@@ -37,6 +40,7 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     color: rgba(249, 115, 22, 0.9);
+    /* orange accent */
     margin-bottom: 14px;
 }
 
@@ -46,6 +50,7 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--main-color);
+    /* #070707 — noir */
     line-height: 1;
     margin: 0;
 }
@@ -66,38 +71,36 @@
     border-bottom: 1px solid rgba(7, 7, 7, 0.12);
     cursor: default;
     position: relative;
-    /* translateX remplace padding-left : zéro reflow */
-    transition: transform 0.4s ease;
-    will-change: transform;
+    transition: padding-left 0.4s ease;
+    will-change: padding-left;
 }
 
+/* First row gets a top border */
 .services-list .service-row:first-child {
     border-top: 1px solid rgba(7, 7, 7, 0.12);
 }
 
-.service-row:hover {
-    transform: translateX(18px);
-}
-
-/* Accent bar — scaleY() à la place de height */
+/* Hover: shift right + reveal accent bar */
 .service-row::before {
     content: '';
     position: absolute;
-    left: -18px;
-    /* compense le translateX du parent */
-    top: 10%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 3px;
-    height: 80%;
+    height: 0;
     background: linear-gradient(180deg, rgba(59, 130, 246, 0.85), rgba(249, 115, 22, 0.85));
     border-radius: 2px;
-    transform: scaleY(0);
-    transform-origin: center;
-    transition: transform 0.4s ease;
-    will-change: transform;
+    transition: height 0.4s ease;
+    will-change: height;
 }
 
 .service-row:hover::before {
-    transform: scaleY(1);
+    height: 60%;
+}
+
+.service-row:hover {
+    padding-left: 18px;
 }
 
 /* ── Left: number + line ─────────────────────────────── */
@@ -115,39 +118,32 @@
     color: rgba(7, 7, 7, 0.25);
     letter-spacing: 2px;
     transition: color 0.4s ease;
-    min-width: 24px;
 }
 
 .service-row:hover .service-num {
     color: rgba(249, 115, 22, 0.9);
 }
 
-/* scaleX() remplace width — zéro reflow */
 .service-line {
-    width: 56px;
-    /* taille fixe, on ne change plus la width */
+    width: 40px;
     height: 1px;
-    background: rgba(249, 115, 22, 0.6);
+    background: rgba(7, 7, 7, 0.15);
+    transition: background 0.4s ease, width 0.4s ease;
     flex-shrink: 0;
-    transform: scaleX(0.7);
-    transform-origin: left;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    will-change: transform;
-    opacity: 0.4;
+    will-change: width;
 }
 
 .service-row:hover .service-line {
-    transform: scaleX(1);
-    opacity: 1;
+    background: rgba(249, 115, 22, 0.6);
+    width: 56px;
 }
 
 /* ── Centre: text ────────────────────────────────────── */
 .service-body {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 12px;
 }
-
 
 .service-body h4 {
     font-family: var(--title-font);
@@ -165,28 +161,25 @@
     color: #000;
 }
 
-/* Description : opacity + translateY uniquement — zéro reflow
-   La hauteur est toujours réservée (visibility:hidden), ce qui évite
-   tout changement de layout au hover. */
 .service-body p {
     font-family: var(--text-font);
     font-size: 14px;
-    color: rgba(7, 7, 7, 0.65);
+    color: rgba(7, 7, 7, 0.45);
     line-height: 1.8;
     margin: 0;
     max-width: 560px;
-    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
-    will-change: transform, opacity;
+    transition: opacity 0.4s ease, max-height 0.4s ease, color 0.4s ease, margin 0.4s ease;
+    will-change: max-height, opacity, margin-top;
 }
 
 .service-row:hover .service-body p {
-    visibility: visible;
     opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0s;
+    max-height: 120px;
+    margin-top: 4px;
+    color: rgba(7, 7, 7, 0.75);
 }
 
 /* ── Right: arrow ────────────────────────────────────── */
@@ -200,13 +193,14 @@
 .service-arrow i {
     font-size: 24px;
     color: rgba(7, 7, 7, 0.18);
-    transition: color 0.4s ease, transform 0.4s ease;
-    will-change: transform;
+    rotate: 0deg;
+    transition: color 0.4s ease, rotate 0.4s ease, transform 0.4s ease;
 }
 
 .service-row:hover .service-arrow i {
     color: rgba(249, 115, 22, 0.85);
-    transform: rotate(45deg) scale(1.1);
+    rotate: 45deg;
+    transform: scale(1.1);
 }
 
 /* ── Responsive ──────────────────────────────────────── */
@@ -227,11 +221,7 @@
     }
 
     .service-row:hover {
-        transform: translateX(10px);
-    }
-
-    .service-row::before {
-        left: -10px;
+        padding-left: 10px;
     }
 
     .service-line {
