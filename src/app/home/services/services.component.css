@@ -197,7 +197,7 @@
 }
 
 .service-row:hover .service-arrow i {
-    color: rgba(249, 115, 22, 0.85);
+    color: rgba(0, 0, 0, 0.85);
     rotate: 45deg;
     transform: scale(1.1);
 }
