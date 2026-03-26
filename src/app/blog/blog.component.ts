@@ -24,7 +24,7 @@ export class BlogComponent implements OnInit {
   private http = inject(HttpClient);
 
   ngOnInit(): void {
-    this.http.get<{ posts: LinkedInPost[], total: number, cached: boolean }>('http://localhost:8001/api/linkedin/posts')
+    this.http.get<{ posts: LinkedInPost[], total: number, cached: boolean }>('https://nnoah29-backend.vercel.app/api/linkedin/posts')
       .subscribe({
         next: (data) => {
           this.posts = data.posts;
