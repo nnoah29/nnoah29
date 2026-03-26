@@ -1,6 +1,7 @@
 /*
  * ----------------------------------------------------------------------------------------
- * 06.SERVICE CSS STYLE — Light theme (inverted)
+ * 06.SERVICE CSS STYLE — Light theme · GPU-optimized
+ * Toutes les animations utilisent transform/opacity uniquement (zéro reflow)
  * ----------------------------------------------------------------------------------------
  */
 
@@ -8,12 +9,11 @@
     padding-top: 120px;
     padding-bottom: 120px;
     background: var(--primary-color);
-    /* #d0cfca — beige/crème */
     position: relative;
     overflow: hidden;
 }
 
-/* Subtle grain texture overlay */
+/* Grain texture overlay */
 .services-noise {
     position: absolute;
     inset: 0;
@@ -37,7 +37,6 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     color: rgba(249, 115, 22, 0.9);
-    /* orange accent */
     margin-bottom: 14px;
 }
 
@@ -47,7 +46,6 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--main-color);
-    /* #070707 — noir */
     line-height: 1;
     margin: 0;
 }
@@ -68,34 +66,38 @@
     border-bottom: 1px solid rgba(7, 7, 7, 0.12);
     cursor: default;
     position: relative;
-    transition: padding-left 0.4s ease;
+    /* translateX remplace padding-left : zéro reflow */
+    transition: transform 0.4s ease;
+    will-change: transform;
 }
 
-/* First row gets a top border */
 .services-list .service-row:first-child {
     border-top: 1px solid rgba(7, 7, 7, 0.12);
 }
 
-/* Hover: shift right + reveal accent bar */
+.service-row:hover {
+    transform: translateX(18px);
+}
+
+/* Accent bar — scaleY() à la place de height */
 .service-row::before {
     content: '';
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    left: -18px;
+    /* compense le translateX du parent */
+    top: 10%;
     width: 3px;
-    height: 0;
+    height: 80%;
     background: linear-gradient(180deg, rgba(59, 130, 246, 0.85), rgba(249, 115, 22, 0.85));
     border-radius: 2px;
-    transition: height 0.4s ease;
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    will-change: transform;
 }
 
 .service-row:hover::before {
-    height: 60%;
-}
-
-.service-row:hover {
-    padding-left: 18px;
+    transform: scaleY(1);
 }
 
 /* ── Left: number + line ─────────────────────────────── */
@@ -120,25 +122,32 @@
     color: rgba(249, 115, 22, 0.9);
 }
 
+/* scaleX() remplace width — zéro reflow */
 .service-line {
-    width: 40px;
+    width: 56px;
+    /* taille fixe, on ne change plus la width */
     height: 1px;
-    background: rgba(7, 7, 7, 0.15);
-    transition: background 0.4s ease, width 0.4s ease;
+    background: rgba(249, 115, 22, 0.6);
     flex-shrink: 0;
+    transform: scaleX(0.7);
+    transform-origin: left;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    will-change: transform;
+    opacity: 0.4;
 }
 
 .service-row:hover .service-line {
-    background: rgba(249, 115, 22, 0.6);
-    width: 56px;
+    transform: scaleX(1);
+    opacity: 1;
 }
 
 /* ── Centre: text ────────────────────────────────────── */
 .service-body {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0;
 }
+
 
 .service-body h4 {
     font-family: var(--title-font);
@@ -156,24 +165,28 @@
     color: #000;
 }
 
+/* Description : opacity + translateY uniquement — zéro reflow
+   La hauteur est toujours réservée (visibility:hidden), ce qui évite
+   tout changement de layout au hover. */
 .service-body p {
     font-family: var(--text-font);
     font-size: 14px;
-    color: rgba(7, 7, 7, 0.45);
+    color: rgba(7, 7, 7, 0.65);
     line-height: 1.8;
     margin: 0;
     max-width: 560px;
-    max-height: 0;
-    overflow: hidden;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.4s ease, max-height 0.4s ease, color 0.4s ease, margin 0.4s ease;
+    transform: translateY(-6px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+    will-change: transform, opacity;
 }
 
 .service-row:hover .service-body p {
+    visibility: visible;
     opacity: 1;
-    max-height: 120px;
-    margin-top: 4px;
-    color: rgba(7, 7, 7, 0.75);
+    transform: translateY(0);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0s;
 }
 
 /* ── Right: arrow ────────────────────────────────────── */
@@ -187,14 +200,13 @@
 .service-arrow i {
     font-size: 24px;
     color: rgba(7, 7, 7, 0.18);
-    rotate: 0deg;
-    transition: color 0.4s ease, rotate 0.4s ease, transform 0.4s ease;
+    transition: color 0.4s ease, transform 0.4s ease;
+    will-change: transform;
 }
 
 .service-row:hover .service-arrow i {
     color: rgba(249, 115, 22, 0.85);
-    rotate: 45deg;
-    transform: scale(1.1);
+    transform: rotate(45deg) scale(1.1);
 }
 
 /* ── Responsive ──────────────────────────────────────── */
@@ -215,7 +227,11 @@
     }
 
     .service-row:hover {
-        padding-left: 10px;
+        transform: translateX(10px);
+    }
+
+    .service-row::before {
+        left: -10px;
     }
 
     .service-line {
