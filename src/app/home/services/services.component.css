@@ -17,7 +17,6 @@
 .services-noise {
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 0;
     transform: translateZ(0);
@@ -89,7 +88,7 @@
     transform: translateY(-50%);
     width: 3px;
     height: 0;
-    background: linear-gradient(180deg, rgba(59, 130, 246, 0.85), rgba(249, 115, 22, 0.85));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0.85));
     border-radius: 2px;
     transition: height 0.4s ease;
     will-change: height;
@@ -121,7 +120,7 @@
 }
 
 .service-row:hover .service-num {
-    color: rgba(249, 115, 22, 0.9);
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .service-line {
@@ -134,7 +133,7 @@
 }
 
 .service-row:hover .service-line {
-    background: rgba(249, 115, 22, 0.6);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(255, 255, 255, 0.85));
     width: 56px;
 }
 
