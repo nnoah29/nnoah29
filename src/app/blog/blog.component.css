@@ -28,7 +28,10 @@
     -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1)
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 100%;
+    aspect-ratio: 1400 / 788;
+    object-fit: cover;
 }
 
 .blog-post-box .blog-post-img .blog-post-category {
