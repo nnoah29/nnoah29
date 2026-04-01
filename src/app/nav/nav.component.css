@@ -1,0 +1,131 @@
+
+/* ===================================================
+   SIDE NAVIGATION BAR (Scroll Tracker)
+=================================================== */
+
+.side-nav {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px; /* Un peu plus large pour le texte */
+    height: 300px;
+    z-index: 1000;
+    pointer-events: none;
+    mix-blend-mode: difference; /* Adaptation auto de la couleur */
+}
+
+/* La ligne verticale subtile */
+.vertical-line {
+    position: absolute;
+    right: 40px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 1;
+}
+
+.nav-items {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 30px;
+}
+
+.nav-item {
+    position: relative;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    pointer-events: auto; /* Active le clic */
+}
+
+/* --- LE NUMÉRO (Apparaît quand actif) --- */
+.nav-num {
+    position: absolute;
+    right: 65px;
+    color: #ffffff;
+    font-family: var(--title-font, sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- LA LIGNE (Rétractée par défaut) --- */
+.nav-line {
+    position: absolute;
+    right: 40px;
+    width: 15px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: right;
+}
+
+/* --- NOUVEAU : LE TEXTE (Caché par défaut) --- */
+.nav-name {
+    position: absolute;
+    right: 48px; /* Juste à côté de l'axe vertical */
+    color: #ffffff;
+    font-family: var(--title-font, sans-serif);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateX(10px); /* Décalé vers la droite */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+/* =========================================
+   ETAT ACTIF (Section en cours)
+========================================= */
+.nav-item.active .nav-line {
+    width: 60px;
+    right: 15px; /* Traverse la ligne verticale vers la droite */
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.nav-item.active .nav-num {
+    opacity: 1;
+    transform: translateX(0);
+    right: 90px;
+}
+
+/* Le texte reste caché quand c'est actif */
+.nav-item.active .nav-name {
+    opacity: 0;
+}
+
+/* =========================================
+   SURVOL (Hover sur les inactifs)
+========================================= */
+/* La ligne se réduit à 0 */
+.nav-item:hover:not(.active) .nav-line {
+    width: 0px;
+    opacity: 0;
+}
+
+/* Le texte apparaît à la place de la ligne */
+.nav-item:hover:not(.active) .nav-name {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+@media (max-width: 768px) {
+    .side-nav {
+        display: none;
+    }
+}
