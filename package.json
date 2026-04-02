@@ -19,6 +19,7 @@
     "@angular/router": "^19.2.0",
     "@studio-freight/lenis": "^1.0.42",
     "@types/three": "^0.183.1",
+    "@vercel/analytics": "^2.0.1",
     "bootstrap": "^5.3.6",
     "gsap": "^3.13.0",
     "jquery": "^3.7.1",
