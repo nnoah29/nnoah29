@@ -2,19 +2,14 @@ const fs = require('fs');
 const path = require('path');
 
 // Configure your application's domain here
-const DOMAIN = process.env.DOMAIN || 'https://nnoah29.vercel.app';
+const DOMAIN = process.env.DOMAIN || 'https://www.toffanoah.com';
 
 // Define the routes and sections of your Single Page Application
 // As you add true child routes later (e.g., /about, /projects/:id)
 // you can add them to this array or dynamically fetch them from an API.
+// Note: Google ignores anchor hashes (/#about) for indexing, so only distinct paths are included.
 const routes = [
-  '/',
-  '/#about',
-  '/#services',
-  '/#portfolio',
-  '/#testimonials',
-  '/#blog',
-  '/#contact'
+  '/'
 ];
 
 function generateSitemap() {
