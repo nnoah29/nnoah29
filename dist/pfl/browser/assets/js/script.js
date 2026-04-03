@@ -7,42 +7,42 @@ Version      : 1.0
 */
 
 
-(function($) {
+(function ($) {
     "use strict";
 
 
 
 
-/* ## Fact Counter + Text Count - Our Success */
-        if ($('.counter-text-wrap').length) {
-            $('.counter-text-wrap').appear(function() {
+    /* ## Fact Counter + Text Count - Our Success */
+    if ($('.counter-text-wrap').length) {
+        $('.counter-text-wrap').appear(function () {
 
-                var $t = $(this),
-                    n = $t.find(".count-text").attr("data-stop"),
-                    r = parseInt($t.find(".count-text").attr("data-speed"), 10);
+            var $t = $(this),
+                n = $t.find(".count-text").attr("data-stop"),
+                r = parseInt($t.find(".count-text").attr("data-speed"), 10);
 
-                if (!$t.hasClass("counted")) {
-                    $t.addClass("counted");
-                    $({
-                        countNum: $t.find(".count-text").text()
-                    }).animate({
-                        countNum: n
-                    }, {
-                        duration: r,
-                        easing: "linear",
-                        step: function() {
-                            $t.find(".count-text").text(Math.floor(this.countNum));
-                        },
-                        complete: function() {
-                            $t.find(".count-text").text(this.countNum);
-                        }
-                    });
-                }
+            if (!$t.hasClass("counted")) {
+                $t.addClass("counted");
+                $({
+                    countNum: $t.find(".count-text").text()
+                }).animate({
+                    countNum: n
+                }, {
+                    duration: r,
+                    easing: "linear",
+                    step: function () {
+                        $t.find(".count-text").text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $t.find(".count-text").text(this.countNum);
+                    }
+                });
+            }
 
-            }, {
-                accY: 0
-            });
-        }
+        }, {
+            accY: 0
+        });
+    }
 
     /*
      * ----------------------------------------------------------------------------------------
@@ -56,21 +56,21 @@ Version      : 1.0
         meanExpand: ['<i class="fal fa-plus"></i>'],
     });
 
-    $(".sidebar__close-btn ,.mobile-menu .onepage li a  > *:not(button)").on("click", function() {
+    $(".sidebar__close-btn ,.mobile-menu .onepage li a  > *:not(button)").on("click", function () {
         $(".sidebar__area").removeClass("sidebar-opened");
         $(".body-overlay").removeClass("opened");
     });
 
-    $(".sidebar-toggle-btn").on("click", function() {
+    $(".sidebar-toggle-btn").on("click", function () {
         $(".sidebar__area").addClass("sidebar-opened");
         $(".body-overlay").addClass("opened");
     });
-    $(".sidebar__close-btn").on("click", function() {
+    $(".sidebar__close-btn").on("click", function () {
         $(".sidebar__area").removeClass("sidebar-opened");
         $(".body-overlay").removeClass("opened");
     });
 
-    $(".body-overlay").on("click", function() {
+    $(".body-overlay").on("click", function () {
         $(".sidebar__area").removeClass("sidebar-opened");
         $(".body-overlay").removeClass("opened");
     });
@@ -83,7 +83,7 @@ Version      : 1.0
      * ----------------------------------------------------------------------------------------
      */
 
-    var magnifPopup = function() {
+    var magnifPopup = function () {
         $('.work-popup').magnificPopup({
             type: 'image',
             removalDelay: 300,
@@ -100,7 +100,7 @@ Version      : 1.0
                 // The "opener" function should return the element from which popup will be zoomed in
                 // and to which popup will be scaled down
                 // By defailt it looks for an image tag:
-                opener: function(openerElement) {
+                opener: function (openerElement) {
                     // openerElement is the element on which popup was initialized, in this case its <a> tag
                     // you don't need to add "opener" option if this code matches your needs, it's defailt one.
                     return openerElement.is('img') ? openerElement : openerElement.find('img');
@@ -205,7 +205,7 @@ Version      : 1.0
      */
 
     function scrollNav() {
-        $('.onepage li a').click(function() {
+        $('.onepage li a').click(function () {
             $(".onepage li a.active").removeClass("active");
             $(this).addClass("active");
 
@@ -259,12 +259,12 @@ Version      : 1.0
 
 
     // ## Project Filter
-    $(".project-filter li").on('click', function() {
+    $(".project-filter li").on('click', function () {
         $(".project-filter li").removeClass("current");
         $(this).addClass("current");
 
         var selector = $(this).attr('data-filter');
-        $('.project-masonry-active').imagesLoaded(function() {
+        $('.project-masonry-active').imagesLoaded(function () {
             $(".project-masonry-active").isotope({
                 itemSelector: '.item',
                 filter: selector,
@@ -310,7 +310,7 @@ Version      : 1.0
         return pattern.test(emailAddress);
 
     }
-    $("#contactForm").on('submit', function(e) {
+    $("#contactForm").on('submit', function (e) {
         e.preventDefault();
         var data = {
             name: $("#name").val(),
@@ -324,7 +324,7 @@ Version      : 1.0
                 type: "POST",
                 url: "sendmail.php",
                 data: data,
-                success: function() {
+                success: function () {
                     $('#contactForm .input-success').delay(500).fadeIn(1000);
                     $('#contactForm .input-error').fadeOut(500);
                 }
@@ -342,7 +342,7 @@ Version      : 1.0
        When document is scroll, do
        ========================================================================== */
 
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
 
         // ## Header Style and Scroll to Top
         function headerStyle() {
@@ -370,7 +370,7 @@ Version      : 1.0
        When document is loaded, do
        ========================================================================== */
 
-    $(window).on('load', function() {
+    $(window).on('load', function () {
 
 
         const svg = document.getElementById("preloaderSvg");
@@ -379,7 +379,7 @@ Version      : 1.0
         const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
         tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
-            delay: 1.5,
+            delay: 0.3,
             y: -100,
             opacity: 0,
         });
@@ -410,7 +410,7 @@ Version      : 1.0
      */
     const cursorBall = document.getElementById('ball');
 
-    document.addEventListener('mousemove', function(e) {
+    document.addEventListener('mousemove', function (e) {
         // Update cursor position and opacity on mousemove
         gsap.to(cursorBall, {
             duration: 0.3,
@@ -423,8 +423,8 @@ Version      : 1.0
 
     // Hover effect on elements
     const hoverElements = document.querySelectorAll('a');
-    hoverElements.forEach(function(element) {
-        element.addEventListener('mouseenter', function() {
+    hoverElements.forEach(function (element) {
+        element.addEventListener('mouseenter', function () {
             // Animate cursorBall on mouseenter
             cursorBall.classList.add('hovered');
             gsap.to(cursorBall, {
@@ -435,7 +435,7 @@ Version      : 1.0
             });
         });
 
-        element.addEventListener('mouseleave', function() {
+        element.addEventListener('mouseleave', function () {
             // Restore cursorBall on mouseleave
             cursorBall.classList.remove('hovered');
             gsap.to(cursorBall, {
