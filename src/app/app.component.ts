@@ -10,7 +10,7 @@ import { inject } from '@vercel/analytics';
 export class AppComponent implements OnInit {
 
   ngOnInit() {
-    //inject();
+    inject();
   }
 
   ngAfterViewInit(): void {
