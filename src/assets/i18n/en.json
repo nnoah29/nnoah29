@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "testimonials": "Testimonials",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Software Engineer",
+    "subtitle": "BUILDING SYSTEMS. \nNOT JUST APPS.",
+    "cvButton": "Get my CV",
+    "iam": "i am a",
+    "description": "Systems-focused. Performance-driven. AI-enabled. Building scalable backend systems."
+  },
+  "about": {
+    "title": "About Me",
+    "heading": "DEVELOP, OPTIMIZE, INNOVATE.",
+    "subheading": "Innovation and technologies for efficiency.",
+    "iam": "I am",
+    "name": "Noah TOFFA",
+    "paragraph1": ", a developer specialized in Linux systems, backend development and automation. I built my expertise through daily practice - understanding how things work at a deep level, and improving them.",
+    "paragraph2": "A strong advocate of the open-source ecosystem, particularly Arch Linux, I specialize in system development in C/C++, designing APIs and backends with FastAPI or Express.js, automating complex workflows, and integrating artificial intelligence into concrete systems."
+  },
+  "services": {
+    "title": "Services",
+    "systemsProgramming": {
+      "title": "Systems Programming",
+      "description": "Design and development of low-level software using C and C++. Focus on performance, memory management, and Linux system internals."
+    },
+    "fullStackDevelopment": {
+      "title": "Full-Stack Development",
+      "description": "End-to-end application development using Angular, FastAPI, and Flutter. From backend APIs to responsive web and mobile interfaces."
+    },
+    "softwareArchitecture": {
+      "title": "Software Architecture",
+      "description": "Clean, modular, and extensible software architectures. Emphasis on maintainability, scalability, and long-term evolution."
+    },
+    "networkBackendEngineering": {
+      "title": "Network & Backend Engineering",
+      "description": "Building robust client-server architectures using TCP and custom protocols. Scalable, efficient backend systems with a strong focus on reliability."
+    }
+  },
+  "portfolio": {
+    "title": "FEATURED PROJECTS",
+    "loading": "FETCHING DATA...",
+    "error": "ERROR: {{error}}",
+    "retry": "RETRY",
+    "defaultDescription": "GITHUB PROJECT REPOSITORY",
+    "viewProject": "VIEW_PROJECT",
+    "emptyState": "NO RECORDS FOUND."
+  },
+  "contact": {
+    "title": "Let's Start a Project",
+    "subtitle": "Feel free to contact me if you have a project or a technical challenge to solve.",
+    "officeLocation": "Office Location",
+    "officeLocationValue": "Bénin, Cotonou",
+    "contactNumber": "Contact Number",
+    "contactNumberValue": "+229 01 42 08 35 53",
+    "emailAddress": "Email Address",
+    "emailAddressValue": "iam@toffanoah.com",
+    "followMe": "Follow Me",
+    "form": {
+      "title": "Send a Message",
+      "fullName": "Full Name",
+      "emailAddress": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "sendButton": "Send Message"
+    }
+  }
+}

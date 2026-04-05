@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "testimonials": "Témoignages",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Software Engineer",
+    "subtitle": "DES SYSTÈMES. PAS JUSTE DES APP.",
+    "cvButton": "Voir mon CV",
+    "iam": "Je suis",
+    "description": "Orienté Systèmes. Axé sur la performance. Tirant parti de l'IA. Expert en dev backend"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "heading": "DÉVELOPPER,OPTIMISER, INNOVER.",
+    "subheading": "Allier innovation et technologies pour plus d'efficacité.",
+    "iam": "Je suis",
+    "name": "Noah TOFFA",
+    "paragraph1": ", développeur spécialisé dans les systèmes Linux, le backend et l'automatisation. J'ai construit mon expertise en pratiquant au quotidien - comprendre comment les choses fonctionnent en profondeur, et les améliorer.",
+    "paragraph2": "Fervent défenseur de l'écosystème open-source, notamment d'Arch Linux, je me spécialise dans le développement système en C/C++, la conception d'APIs et de backends avec FastAPI ou Express.js, l'automatisation de workflows complexes, et l'intégration d'intelligence artificielle dans des systèmes concrets."
+  },
+  "services": {
+    "title": "Mes Services",
+    "systemsProgramming": {
+      "title": "Programmation Système",
+      "description": "Conception et développement de logiciels bas niveau utilisant le C et le C++. Je me concentre sur les performances, la gestion mémoire et le fonctionnement interne de Linux."
+    },
+    "fullStackDevelopment": {
+      "title": "Développement Full-Stack",
+      "description": "Création d'applications complètes avec Angular, FastAPI et Flutter, de la conception des API backend jusqu'à la réalisation d'interfaces web et mobiles parfaitement réactives."
+    },
+    "softwareArchitecture": {
+      "title": "Architecture Logicielle",
+      "description": "Mise en place d'architectures saines, modulaires et extensibles, avec un accent particulier sur la maintenabilité, la montée en charge et l'évolution à long terme de vos projets."
+    },
+    "networkBackendEngineering": {
+      "title": "Réseaux & Ingénierie Backend",
+      "description": "Conception d'architectures client-serveur ultra-robustes reposant sur TCP et des protocoles sur mesure. Je bâtis des systèmes backend performants en privilégiant la fiabilité."
+    }
+  },
+  "portfolio": {
+    "title": "PROJETS RÉCENTS",
+    "loading": "CHARGEMENT EN COURS...",
+    "error": "ERREUR : {{error}}",
+    "retry": "RÉESSAYER",
+    "defaultDescription": "RÉFÉRENTIEL GITHUB DU PROJET",
+    "viewProject": "VOIR_LE_PROJET",
+    "emptyState": "AUCUN RÉSULTAT TROUVÉ."
+  },
+  "contact": {
+    "title": "Travaillons ensemble.",
+    "subtitle": "N'hésitez pas à me contacter si vous avez un projet ou un défi technique à résoudre.",
+    "officeLocation": "Lieu de travail",
+    "officeLocationValue": "Bénin, Cotonou",
+    "contactNumber": "Numéro de téléphone",
+    "contactNumberValue": "+229 01 42 08 35 53",
+    "emailAddress": "Adresse e-mail",
+    "emailAddressValue": "iam@toffanoah.com",
+    "followMe": "Me suivre",
+    "form": {
+      "title": "Envoyer un message",
+      "fullName": "Nom complet",
+      "emailAddress": "Adresse e-mail",
+      "subject": "Objet",
+      "message": "Votre message",
+      "sendButton": "Envoyer le message"
+    }
+  }
+}
