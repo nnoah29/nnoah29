@@ -8,11 +8,12 @@ import {
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ParallaxService } from '../../shared/services/parallax.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })

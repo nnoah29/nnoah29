@@ -10,7 +10,7 @@ import { BlogComponent } from "../blog/blog.component";
 import { ContactComponent } from "../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
 import { CompanyComponent } from "./company/company.component";
-import {NavComponent} from "../nav/nav.component";
+import { NavComponent } from "../nav/nav.component";
 
 @Component({
   selector: 'app-home',

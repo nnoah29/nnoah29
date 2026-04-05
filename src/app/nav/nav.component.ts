@@ -1,11 +1,12 @@
-import {Component, HostListener} from '@angular/core';
-import {NgForOf} from "@angular/common";
+import { Component, HostListener } from '@angular/core';
+import { NgForOf } from "@angular/common";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav',
-    imports: [
-        NgForOf
-    ],
+  imports: [
+    NgForOf, TranslateModule
+  ],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })

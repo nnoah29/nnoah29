@@ -1,14 +1,12 @@
 <div class="side-nav">
 
     <div class="nav-items">
-        <div class="nav-item"
-             *ngFor="let sec of sections"
-             [class.active]="activeSection === sec.id"
-             (click)="scrollTo(sec.id)">
+        <div class="nav-item" *ngFor="let sec of sections" [class.active]="activeSection === sec.id"
+            (click)="scrollTo(sec.id)">
 
             <span class="nav-num">{{ sec.num }}</span>
 
-            <span class="nav-name">{{ sec.name }}</span>
+            <span class="nav-name">{{ 'nav.' + sec.id | translate }}</span>
 
             <span class="nav-line"></span>
 

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title text-center" #customIcon>
-                    <h2>FEATURED <span class="stroke-text">PROJECTS</span></h2>
+                    <h2 [innerHTML]="'portfolio.title' | translate"></h2>
                 </div>
             </div>
         </div>
@@ -13,13 +13,13 @@
         <div class="portfolio-container-inner">
             <!-- Loading -->
             <div *ngIf="loading" class="loading-state">
-                <p>FETCHING DATA...</p>
+                <p>{{ 'portfolio.loading' | translate }}</p>
             </div>
 
             <!-- Error -->
             <div *ngIf="error && !loading" class="error-state">
-                <p>ERROR: {{ error | uppercase }}</p>
-                <button class="theme-btn" style="margin-top: 15px;" (click)="loadProjects()">RETRY</button>
+                <p>{{ 'portfolio.error' | translate:{'error': error | uppercase} }}</p>
+                <button class="theme-btn" style="margin-top: 15px;" (click)="loadProjects()">{{ 'portfolio.retry' | translate }}</button>
             </div>
 
             <!-- Projects Grid -->
@@ -33,7 +33,7 @@
                     </div>
 
                     <!-- Description -->
-                    <p class="card-desc">{{ project.description || 'GITHUB PROJECT REPOSITORY' }}</p>
+                    <p class="card-desc">{{ project.description || ('portfolio.defaultDescription' | translate) }}</p>
 
                     <!-- Tech Badges -->
                     <div class="tech-badges" *ngIf="project.technologies && project.technologies.length > 0">
@@ -45,7 +45,7 @@
 
                     <!-- Hover action -->
                     <div class="card-action">
-                        <span>VIEW_PROJECT</span>
+                        <span>{{ 'portfolio.viewProject' | translate }}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -63,7 +63,7 @@
 
             <!-- Empty state -->
             <div *ngIf="!loading && !error && projects.length === 0" class="empty-state">
-                <p>NO RECORDS FOUND.</p>
+                <p>{{ 'portfolio.emptyState' | translate }}</p>
             </div>
         </div>
     </div>

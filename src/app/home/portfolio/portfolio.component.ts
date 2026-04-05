@@ -13,11 +13,12 @@ import { Subscription } from 'rxjs';
 import { PortfolioService, Project } from '../../services/portfolio.service';
 import { ParallaxService } from '../../shared/services/parallax.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, TranslateModule],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css',
 })

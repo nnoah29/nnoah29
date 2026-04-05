@@ -3,36 +3,35 @@
         <div class="row gx-5">
             <div class="col-lg-5 mb-5 mb-lg-0">
                 <div class="contact-text-part wow fadeInUp delay-0-2s">
-                    <h2 class="massive-title">Let's Start a Project</h2>
-                    <p class="subtitle mb-5">I am always open to discuss your project, tackle your technical challenges
-                        and help you build robust, scalable software.</p>
+                    <h2 class="massive-title">{{ 'contact.title' | translate }}</h2>
+                    <p class="subtitle mb-5">{{ 'contact.subtitle' | translate }}</p>
 
                     <div class="contact-info-list">
                         <div class="single-contact-item wow fadeInUp" data-wow-delay=".2s">
                             <span class="circle-icon"><i class="ri-map-pin-line"></i></span>
                             <div>
-                                <h3>Office Location</h3>
-                                <p>Bénin, Cotonou</p>
+                                <h3>{{ 'contact.officeLocation' | translate }}</h3>
+                                <p>{{ 'contact.officeLocationValue' | translate }}</p>
                             </div>
                         </div>
                         <div class="single-contact-item wow fadeInUp" data-wow-delay=".4s">
                             <span class="circle-icon"><i class="ri-headphone-line"></i></span>
                             <div>
-                                <h3>Contact Number</h3>
-                                <p>+229 01 42 08 35 53</p>
+                                <h3>{{ 'contact.contactNumber' | translate }}</h3>
+                                <p>{{ 'contact.contactNumberValue' | translate }}</p>
                             </div>
                         </div>
                         <div class="single-contact-item wow fadeInUp" data-wow-delay=".6s">
                             <span class="circle-icon"><i class="ri-mail-line"></i></span>
                             <div>
-                                <h3>Email Address</h3>
-                                <p>iam&#64;toffanoah.com</p>
+                                <h3>{{ 'contact.emailAddress' | translate }}</h3>
+                                <p>{{ 'contact.emailAddressValue' | translate }}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="contact-socials wow fadeInUp" data-wow-delay=".8s">
-                        <h3>Follow Me</h3>
+                        <h3>{{ 'contact.followMe' | translate }}</h3>
                         <ul class="social-links">
                             <li><a href="https://www.linkedin.com/in/noah-toffa/" target="_blank"
                                     rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a></li>
@@ -55,26 +54,26 @@
             <div class="col-lg-7">
                 <div class="contact-form-wrapper wow fadeInUp delay-0-4s">
                     <form id="contactForm" class="modern-contact-form" action="index.html#" method="post">
-                        <h3 class="form-title">Send a Message</h3>
+                        <h3 class="form-title">{{ 'contact.form.title' | translate }}</h3>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="text" id="name" class="form-control" placeholder=" " required="">
-                                    <label for="name">Full Name</label>
+                                    <label for="name">{{ 'contact.form.fullName' | translate }}</label>
                                     <span class="focus-border"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="email" id="email" class="form-control" placeholder=" " required="">
-                                    <label for="email">Email Address</label>
+                                    <label for="email">{{ 'contact.form.emailAddress' | translate }}</label>
                                     <span class="focus-border"></span>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="text" id="subject" class="form-control" placeholder=" " required="">
-                                    <label for="subject">Subject</label>
+                                    <label for="subject">{{ 'contact.form.subject' | translate }}</label>
                                     <span class="focus-border"></span>
                                 </div>
                             </div>
@@ -82,13 +81,13 @@
                                 <div class="form-group">
                                     <textarea name="message" id="message" class="form-control" rows="4" placeholder=" "
                                         required=""></textarea>
-                                    <label for="message">Your Message</label>
+                                    <label for="message">{{ 'contact.form.message' | translate }}</label>
                                     <span class="focus-border"></span>
                                 </div>
                             </div>
                             <div class="col-md-12 mt-3">
                                 <button type="submit" class="magnetic-btn">
-                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-text">{{ 'contact.form.sendButton' | translate }}</span>
                                     <span class="btn-icon"><i class="ri-arrow-right-up-line"></i></span>
                                 </button>
                                 <div id="msgSubmit" class="hidden"></div>

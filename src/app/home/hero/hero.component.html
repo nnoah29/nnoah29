@@ -43,13 +43,11 @@
             <div class="col-lg-3 nido" #heroLeft>
                 <div class="d-flex flex-column">
                     <div class="hero-content wow fadeInUp delay-0-2s">
-                        <span class="">
-                            BUILDING SYSTEMS. <br> NOT JUST APPS.
-                        </span>
+                        <span style="white-space: pre-wrap;">{{ 'hero.subtitle' | translate }}</span>
                     </div>
 
                     <div class="hero-content wow fadeInUp delay-0-2s">
-                        <a class="theme-btn cv" href="assets/cv_noah_toffa_fr.pdf">Get my CV</a>
+                        <a class="theme-btn cv" href="assets/cv_noah_toffa_fr.pdf">{{ 'hero.cvButton' | translate }}</a>
                     </div>
                 </div>
 
@@ -59,8 +57,10 @@
             </div>
             <div class="col-lg-3" #heroRight>
                 <div class="hero-content wow fadeInUp delay-0-4s story">
-                    <p> <span class="iam">i am a</span> <span class="title">Software Engineer</span> <br>
-                        AI-driven. Performance-focused. Designing intelligent systems and user experiences.</p>
+                    <p> <span class="iam">{{ 'hero.iam' | translate }}</span> <span class="title">{{ 'hero.title' |
+                            translate }}</span> <br>
+                        {{ 'hero.description' | translate }}
+                    </p>
                 </div>
             </div>
         </div>

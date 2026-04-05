@@ -17,7 +17,7 @@
 
 .hero-content h2 {
     font-weight: 500;
-    font-size: clamp(14vh, 18vh, 21vh);
+    font-size: clamp(7.875em, 10.125em, 11.8125em);
     text-transform: uppercase;
     text-align: center;
     color: var(--main-color);

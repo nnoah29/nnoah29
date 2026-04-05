@@ -8,13 +8,14 @@ import {
 } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { ParallaxService } from '../../shared/services/parallax.service';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css',
 })
