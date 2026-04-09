@@ -17,7 +17,7 @@
   },
   "about": {
     "title": "À Propos de Moi",
-    "heading": "DÉVELOPPER,OPTIMISER, INNOVER.",
+    "heading": "DÉVELOPPER, OPTIMISER, INNOVER.",
     "subheading": "Allier innovation et technologies pour plus d'efficacité.",
     "iam": "Je suis",
     "name": "Noah TOFFA",
@@ -68,7 +68,10 @@
       "emailAddress": "Adresse e-mail",
       "subject": "Objet",
       "message": "Votre message",
-      "sendButton": "Envoyer le message"
+      "sendButton": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Votre message a bien été envoyé !",
+      "error": "Une erreur est survenue. Veuillez réessayer plus tard."
     }
   }
 }

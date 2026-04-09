@@ -71,6 +71,12 @@
     padding-left: 60px;
 }
 
+@media (max-width: 1000px) {
+    .blog-post-caption {
+        padding-left: 0px;
+    }
+}
+
 .blog-post-caption h2 a {
     display: block;
     padding: 10px 0px;

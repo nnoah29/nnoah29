@@ -68,7 +68,10 @@
       "emailAddress": "Email Address",
       "subject": "Subject",
       "message": "Your Message",
-      "sendButton": "Send Message"
+      "sendButton": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred. Please try again later."
     }
   }
 }
