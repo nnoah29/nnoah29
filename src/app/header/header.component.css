@@ -4,34 +4,11 @@
 * ----------------------------------------------------------------------------------------
 */
 
-.header-area {
-    position: relative;
-    left: 0px;
-    top: 0px;
-    z-index: 999;
-    width: 100%;
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-}
 
-.fixed-header .header-upper {
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-    border-bottom: 1px solid rgba(119, 119, 125, .2);
-    background: var(--primary-color);
-}
-
-.fixed-header .header-inner {
+.header-inner {
     padding: 15px 0px;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
-}
-
-.header-inner {
-    padding: 30px 0px;
-    -webkit-transition: all 500ms ease;
-    transition: all 500ms ease;
-
 }
 
 .main-header .header-upper {
@@ -40,11 +17,14 @@
     position: fixed;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
-    /*background: var(--heading-color);*/
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo img {
-    width: 70px;
+    width: 60px;
 }
 
 .main-menu {
@@ -91,7 +71,7 @@
     -webkit-transition: 0.3s;
     transition: 0.3s;
     text-transform: uppercase;
-    color: var(--main-color);
+    color: var(--heading-color);
 }
 
 .main-menu ul li .active {
@@ -179,262 +159,6 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-.side-menu-icon i {
-    color: var(--main-color);
-    font-size: 32px;
-    cursor: pointer;
-    position: relative;
-    top: 5px;
-}
-
-.linkstyle {
-    cursor: pointer;
-    font-size: 18px;
-    position: relative;
-    white-space: nowrap;
-}
-
-.linkstyle:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background: var(--main-color);
-    top: 100%;
-    left: 0;
-    pointer-events: none;
-    -webkit-transform-origin: 100% 50%;
-    transform-origin: 100% 50%;
-    -webkit-transform: scale3d(0, 1, 1);
-    transform: scale3d(0, 1, 1);
-    -webkit-transition: -webkit-transform 0.3s;
-    transition: -webkit-transform 0.3s;
-    transition: transform 0.3s;
-    transition: transform 0.3s, -webkit-transform 0.3s;
-}
-
-
-.linkstyle:hover:before {
-    -webkit-transform-origin: 0% 50%;
-    transform-origin: 0% 50%;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-}
-
-/*----------------------------------------*/
-/*  MEAN MENU CSS START
-/*----------------------------------------*/
-/* mean menu customize */
-.mean-container a.meanmenu-reveal {
-    display: none;
-}
-
-.mean-container .mean-nav {
-    background: none;
-    margin-top: 0;
-}
-
-.mean-container .mean-bar {
-    padding: 0;
-    min-height: auto;
-    background: none;
-}
-
-.mean-container .mean-nav>ul {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    list-style-type: none;
-    display: block !important;
-}
-
-.mean-container a.meanmenu-reveal {
-    display: none !important;
-}
-
-.mean-container .mean-nav ul li a {
-    width: 100%;
-    padding: 10px 0;
-    color: var(--primary-color);
-    border-top: 1px solid #353535;
-    font-size: 14px;
-    line-height: 1.5;
-    font-weight: 500;
-}
-
-.mean-container .mean-nav ul li a:hover {
-    color: var(--primary-color);
-}
-
-.mean-container .mean-nav ul li a.mean-expand {
-    margin-top: 5px;
-    padding: 0 !important;
-    line-height: 14px;
-    border: 1px solid #353535 !important;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    color: var(--primary-color);
-    line-height: 30px;
-    top: 0;
-    font-weight: 400;
-}
-
-.mean-container .mean-nav ul li a.mean-expand:hover {
-    background: var(--tp-theme-1);
-    color: var(--tp-common-white);
-    border-color: #353535;
-}
-
-.mean-container .mean-nav ul li>a>i {
-    display: none;
-}
-
-.mean-container .mean-nav ul li>a.mean-expand i {
-    display: inline-block;
-}
-
-.mean-container .mean-nav>ul>li:first-child>a {
-    border-top: 0;
-}
-
-.mean-container .mean-nav ul li a.mean-expand.mean-clicked {
-    color: var(--tp-common-white);
-}
-
-.mean-container .mean-nav ul li a.mean-expand.mean-clicked i {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    color: var(--tp-heading-primary);
-}
-
-/*----------------------------------------*/
-/*  Sidebar CSS START
-/*----------------------------------------*/
-.sidebar__area {
-    position: fixed;
-    right: -485px;
-    top: 0;
-    width: 465px;
-    height: 100%;
-    background: var(--black-color) none repeat scroll 0 0;
-    overflow-y: scroll;
-    -ms-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 0.5);
-    -o-box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 0.5);
-    box-shadow: -5px 0 20px -5px rgba(0, 0, 0, 0.5);
-    -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    z-index: 9999;
-}
-
-@media (max-width: 575px) {
-    .sidebar__area {
-        width: 290px;
-    }
-}
-
-.sidebar__area.sidebar-opened {
-    right: 0px;
-}
-
-.sidebar__area-2 {
-    left: -485px;
-}
-
-.sidebar__area-2.sidebar-opened {
-    left: 0px;
-}
-
-.sidebar__wrapper {
-    position: relative;
-    padding: 45px;
-    background: var(--black-color);
-}
-
-@media (max-width: 575px) {
-    .sidebar__wrapper {
-        padding: 20px;
-    }
-}
-
-.sidebar__close {
-    position: absolute;
-    top: 35px;
-    right: 45px;
-}
-
-@media (max-width: 575px) {
-    .sidebar__close {
-        top: 12px;
-        right: 20px;
-    }
-}
-
-.sidebar__close-btn {
-    display: inline-block;
-    font-size: 16px;
-    height: 45px;
-    width: 45px;
-    line-height: 49px;
-    background: #000;
-    color: #fff;
-    border-radius: 50%;
-}
-
-.sidebar__close-btn:hover {
-    background: #000;
-}
-
-.sidebar__close-btn-3 {
-    background: #666;
-}
-
-.sidebar__close-btn-3:hover {
-    background: #666;
-}
-
-
-.body-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    left: 0;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    visibility: hidden;
-    -webkit-transition: all 0.3s ease-out 0s;
-    transition: all 0.3s ease-out 0s;
-}
-
-.body-overlay:hover {
-    cursor: pointer;
-}
-
-.body-overlay.opened {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    visibility: visible;
-}
-
-/* ─────────────────────────────────────────────────────
-   GLOWING DIVIDER
-───────────────────────────────────────────────────── */
-.glowing-divider {
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 1), #ffffff, rgba(249, 115, 22, 1), #000000);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.9), 0 0 30px rgba(249, 115, 22, 0.9), 0 0 10px #000000;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
 
 .lang-switcher {
     display: flex;

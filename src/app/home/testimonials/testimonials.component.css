@@ -97,3 +97,46 @@
     margin-left: 15px;
     margin-right: 15px;
 }
+
+/* ── Mobile Adjustments ──────────────────────── */
+@media only screen and (max-width: 767px) {
+    .testimonials-area {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .testi-glow-wrap {
+        margin-bottom: 20px;
+        border-radius: 14px;
+    }
+
+    .testimonial-item {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .testimonial-item .author {
+        margin-bottom: 15px;
+    }
+
+    .testimonial-item .author img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .testimonial-item .text {
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .testimonial-item .testi-des h5 {
+        font-size: 20px;
+        margin-top: 15px;
+        letter-spacing: 1px;
+    }
+
+    .testimonial-item .testi-des span {
+        font-size: 13px;
+    }
+}

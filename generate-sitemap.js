@@ -9,7 +9,9 @@ const DOMAIN = process.env.DOMAIN || 'https://www.toffanoah.com';
 // you can add them to this array or dynamically fetch them from an API.
 // Note: Google ignores anchor hashes (/#about) for indexing, so only distinct paths are included.
 const routes = [
-  '/'
+  '/',
+  '/en',
+  '/fr'
 ];
 
 function generateSitemap() {
