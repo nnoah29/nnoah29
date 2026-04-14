@@ -28,6 +28,8 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
   error: string | null = null;
 
   @ViewChild('customIcon', { static: false }) customIcon!: ElementRef<HTMLElement>;
+  @ViewChild('sectionTitle', { static: false }) sectionTitle!: ElementRef<HTMLElement>;
+
 
   private sub!: Subscription;
 

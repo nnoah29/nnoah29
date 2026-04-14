@@ -52,6 +52,30 @@
     "viewProject": "VIEW_PROJECT",
     "emptyState": "NO RECORDS FOUND."
   },
+  "testimonials": {
+    "title": "What they say.",
+    "leaveReview": "Leave a review",
+    "items": [
+      {
+        "quote": "Attention to detail and creative vision transformed our brand identity.",
+        "author": "Sarah Chen",
+        "role": "Creative Director",
+        "company": "Studio Forma"
+      },
+      {
+        "quote": "Working with them was a true creative partnership from day one.",
+        "author": "Marcus Webb",
+        "role": "Head of Design",
+        "company": "Minimal Co"
+      },
+      {
+        "quote": "They understand that great design is invisible but unforgettable.",
+        "author": "Elena Voss",
+        "role": "Art Director",
+        "company": "Pixel & Co"
+      }
+    ]
+  },
   "contact": {
     "title": "Let's Start a Project",
     "subtitle": "Feel free to contact me if you have a project or a technical challenge to solve.",

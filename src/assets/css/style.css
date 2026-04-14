@@ -408,11 +408,14 @@ html {
 }
 
 .section-title h2 {
-    margin-bottom: 15px;
-    font-size: 60px;
-    line-height: 70px;
+    font-family: var(--title-font);
+    font-size: clamp(52px, 7vw, 90px);
+    font-weight: 700;
     text-transform: uppercase;
-    padding-bottom: 20px;
+    color: var(--primary-color);
+    /* #070707 — noir */
+    line-height: 1;
+    margin: 0;
 }
 
 .section-title p {

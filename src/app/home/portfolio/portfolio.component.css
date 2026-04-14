@@ -2,11 +2,22 @@
 * PORTFOLIO — Brutalist Minimalism (High Contrast)
 * ============================================== */
 
+
+
 .projects-area {
-    padding: 120px 0;
+    padding-top: 120px;
+    padding-bottom: 120px;
     position: relative;
     z-index: 0;
     background-color: var(--body-background, #000);
+    overflow: hidden;
+
+}
+
+.project-header {
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 1;
 }
 
 .portfolio-container {
