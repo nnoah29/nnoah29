@@ -57,22 +57,22 @@
     "leaveReview": "Leave a review",
     "items": [
       {
-        "quote": "Attention to detail and creative vision transformed our brand identity.",
-        "author": "Sarah Chen",
-        "role": "Creative Director",
-        "company": "Studio Forma"
+        "quote": "Le code livré était propre, bien structuré et documenté.",
+        "author": "Léa Renard",
+        "role": "CTO",
+        "company": "Scaleway Labs"
       },
       {
-        "quote": "Working with them was a true creative partnership from day one.",
-        "author": "Marcus Webb",
-        "role": "Head of Design",
-        "company": "Minimal Co"
+        "quote": "Il a su prendre en main notre architecture legacy et la moderniser sans interrompre la production. Rare.",
+        "author": "Armin Diallo",
+        "role": "Lead Développeur",
+        "company": "Fintech Wave"
       },
       {
-        "quote": "They understand that great design is invisible but unforgettable.",
-        "author": "Elena Voss",
-        "role": "Art Director",
-        "company": "Pixel & Co"
+        "quote": "Pas juste un exécutant : il pose les bonnes questions, anticipe les edge cases et livre dans les délais.",
+        "author": "Kevine Moreau",
+        "role": "Product Engineer",
+        "company": "Ops.io"
       }
     ]
   },
