@@ -172,20 +172,21 @@ Version      : 1.0
         const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
 
         tl.to(".preloader-heading .load-text , .preloader-heading .cont", {
-            delay: 0.3,
+            delay: 0.1,
             y: -100,
             opacity: 0,
         });
         tl.to(svg, {
-            duration: 0.5,
+            duration: 0.3,
             attr: { d: curve },
             ease: "power2.easeIn",
         }).to(svg, {
-            duration: 0.5,
+            duration: 0.3,
             attr: { d: flat },
             ease: "power2.easeOut",
         });
         tl.to(".preloader", {
+            duration: 0.3,
             y: -1500,
         });
         tl.to(".preloader", {
@@ -203,15 +204,15 @@ Version      : 1.0
      */
     const cursorBall = document.getElementById('ball');
 
+    const xTo = gsap.quickTo(cursorBall, "x", {duration: 0.3, ease: 'power2.out'});
+    const yTo = gsap.quickTo(cursorBall, "y", {duration: 0.3, ease: 'power2.out'});
+
     document.addEventListener('mousemove', function (e) {
-        // Update cursor position and opacity on mousemove
-        gsap.to(cursorBall, {
-            duration: 0.3,
-            x: e.clientX,
-            y: e.clientY,
-            opacity: 1, // Ensure cursor is visible
-            ease: 'power2.out'
-        });
+        xTo(e.clientX);
+        yTo(e.clientY);
+        if (cursorBall.style.opacity !== "1") {
+            gsap.set(cursorBall, { opacity: 1 });
+        }
     });
 
     // Hover effect on elements

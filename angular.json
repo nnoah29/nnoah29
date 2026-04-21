@@ -29,7 +29,6 @@
             ],
             "styles": [
               "src/assets/css/bootstrap.min.css",
-              "src/assets/css/font-awesome-pro.css",
               "src/assets/fonts/remixicon.css",
               "src/assets/css/magnific-popup.css",
               "src/assets/css/nice-select.min.css",
