@@ -28,6 +28,7 @@ export class TestimonialsComponent {
       id: 3,
       image: 'https://images.unsplash.com/photo-1701615004837-40d8573b6652?w=900&auto=format&fit=crop&q=60',
     },
+
   ];
 
   active = signal(0);
