@@ -7,7 +7,16 @@ Version      : 1.0
 */
 
 
-(function ($) {
+/*
+* ----------------------------------------------------------------------------------------
+Author       : Tanvir Hossain
+Template Name: Nino - Premium Portfolio Template
+Version      : 1.0                                          
+* ----------------------------------------------------------------------------------------
+*/
+
+
+(function () {
     "use strict";
 
 
@@ -32,40 +41,6 @@ Version      : 1.0
      *  SCROOL TO UP JS
      * ----------------------------------------------------------------------------------------
      */
-
-    // var progressPath = document.querySelector('.progress-wrap path');
-    // var pathLength = progressPath.getTotalLength();
-    // progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-    // progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-    // progressPath.style.strokeDashoffset = pathLength;
-    // progressPath.getBoundingClientRect();
-    // progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-    // var updateProgress = function() {
-    //     var scroll = $(window).scrollTop();
-    //     var height = $(document).height() - $(window).height();
-    //     var progress = pathLength - (scroll * pathLength / height);
-    //     progressPath.style.strokeDashoffset = progress;
-    // }
-    // updateProgress();
-    //
-    //
-    // $(window).scroll(updateProgress);
-    // var offset = 150;
-    // var duration = 550;
-    // jQuery(window).on('scroll', function() {
-    //     if (jQuery(this).scrollTop() > offset) {
-    //         jQuery('.progress-wrap').addClass('active-progress');
-    //     } else {
-    //         jQuery('.progress-wrap').removeClass('active-progress');
-    //     }
-    // });
-    // jQuery('.progress-wrap').on('click', function(event) {
-    //     event.preventDefault();
-    //     jQuery('html, body').animate({
-    //         scrollTop: 0
-    //     }, duration);
-    //     return false;
-    // })
 
     /* ==========================================================================
                        SCROLLER ANIMATION
@@ -109,7 +84,7 @@ Version      : 1.0
 
 
     // ## WOW Animation
-    if ($('.wow').length) {
+    if (document.querySelector('.wow')) {
         var wow = new WOW({
             boxClass: 'wow', // animated element css class (default is wow)
             animateClass: 'animated', // animation css class (default is animated)
@@ -135,20 +110,24 @@ Version      : 1.0
        When document is scroll, do
        ========================================================================== */
 
-    $(window).on('scroll', function () {
+    window.addEventListener('scroll', function () {
 
         // ## Header Style and Scroll to Top
         function headerStyle() {
-            if ($('.main-header').length) {
-                var windowpos = $(window).scrollTop();
-                var siteHeader = $('.main-header');
-                var scrollLink = $('.scroll-top');
+            const siteHeader = document.querySelector('.main-header');
+            const scrollLink = document.querySelector('.scroll-top');
+            if (siteHeader) {
+                const windowpos = window.scrollY;
                 if (windowpos >= 100) {
-                    siteHeader.addClass('fixed-header');
-                    scrollLink.fadeIn(300);
+                    siteHeader.classList.add('fixed-header');
+                    if (scrollLink) {
+                        gsap.to(scrollLink, { duration: 0.3, opacity: 1, display: 'block' });
+                    }
                 } else {
-                    siteHeader.removeClass('fixed-header');
-                    scrollLink.fadeOut(300);
+                    siteHeader.classList.remove('fixed-header');
+                    if (scrollLink) {
+                        gsap.to(scrollLink, { duration: 0.3, opacity: 0, display: 'none' });
+                    }
                 }
             }
         }
@@ -163,7 +142,7 @@ Version      : 1.0
        When document is loaded, do
        ========================================================================== */
 
-    $(window).on('load', function () {
+    window.addEventListener('load', function () {
 
 
         const svg = document.getElementById("preloaderSvg");
@@ -244,4 +223,4 @@ Version      : 1.0
 
 
 
-})(jQuery); // End jQuery
+})(); // End IIFE
