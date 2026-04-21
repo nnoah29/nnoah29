@@ -1,9 +1,11 @@
 <section class="testi-editorial-area" id="testimonials">
   <div class="testi-container">
-    <div class="testi-section-header wow fadeInUp delay-0-2s section-title">
-      <h2>
-        {{ 'testimonials.title' | translate }}
-      </h2>
+    <div class="row">
+      <div class="col-lg-12 testi-section-header">
+        <div class="wow fadeInUp delay-0-2s section-title">
+          <h2 [innerHTML]="'testimonials.title' | translate"></h2>
+        </div>
+      </div>
     </div>
 
     <!-- Large index number and content -->

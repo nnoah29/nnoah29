@@ -4,6 +4,7 @@
     padding-bottom: 120px;
     background-color: var(--primary-color);
     position: relative;
+    min-height: 90vh;
 }
 
 .testi-container {
@@ -22,12 +23,14 @@
     gap: 2rem;
 }
 
-.testi-section-header h2 {
-    font-size: 80px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 4rem;
-    letter-spacing: -0.04em;
+.testi-section-header {
+    margin-bottom: 70px;
+}
+
+.testi-section-header .section-title h2 {
+    color: #1a1a1a; /* Dark color for light background */
+    /* Inherits font-size: clamp(52px, 7vw, 90px) and text-transform: uppercase from style.css */
+    letter-spacing: normal; /* Resetting the -0.04em */
 }
 
 .testi-index {
@@ -43,6 +46,13 @@
 .testi-content {
     flex: 1;
     padding-top: 1.5rem;
+
+}
+
+@media (max-width: 400px) {
+    .testi-content {
+        padding-top: 0;
+    }
 }
 
 .testi-quote {
@@ -55,6 +65,7 @@
     opacity: 1;
     transform: translateX(0);
     margin: 0;
+    min-height: 21vh;
 }
 
 @media (min-width: 768px) {
