@@ -1,0 +1,11 @@
+app-services,
+app-portfolio,
+app-testimonials,
+app-blog,
+app-contact,
+app-company,
+app-footer {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
+    /* Provide a placeholder size to avoid scrollbar jumping */
+}

@@ -13,16 +13,4 @@ export class AppComponent implements OnInit {
     //inject();
   }
 
-  ngAfterViewInit(): void {
-    this.loadCustomScript();
-  }
-
-  loadCustomScript() {
-    const node = document.createElement('script');
-    node.src = 'assets/js/script.js';
-    node.type = 'text/javascript';
-    node.async = true;
-    document.body.appendChild(node);
-  }
-
 }

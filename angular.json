@@ -28,34 +28,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/css/animate.min.css",
-              "src/assets/css/font-awesome-pro.css",
-              "src/assets/css/mobilemenu.css",
-              "src/assets/css/responsive.css",
-              "src/assets/css/spacing.css",
               "src/assets/css/bootstrap.min.css",
+              "src/assets/css/font-awesome-pro.css",
+              "src/assets/fonts/remixicon.css",
               "src/assets/css/magnific-popup.css",
               "src/assets/css/nice-select.min.css",
+              "src/assets/css/animate.min.css",
+              "src/assets/css/mobilemenu.css",
               "src/assets/css/slick.min.css",
-              "src/assets/css/style.css"
+              "src/assets/css/spacing.css",
+              "src/assets/css/style.css",
+              "src/assets/css/responsive.css",
+              "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/js/jquery-3.6.0.min.js",
-              "src/assets/js/bootstrap.min.js",
-              "src/assets/js/appear.min.js",
-              "src/assets/js/jquery.magnific-popup.min.js",
-              "src/assets/js/mobilemenu.js",
-              "src/assets/js/gsap.min.js",
-              "src/assets/js/ScrollTrigger.min.js",
-              "src/assets/js/lenis.js",
-              "src/assets/js/slick.min.js",
-              "src/assets/js/jquery.nice-select.min.js",
-              "src/assets/js/imagesloaded.pkgd.min.js",
-              "src/assets/js/isotope.pkgd.min.js",
-              "src/assets/js/wow.min.js",
-              "src/assets/js/script.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

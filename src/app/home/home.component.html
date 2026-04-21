@@ -6,17 +6,39 @@
 
 <app-about></app-about>
 
+@defer (on viewport) {
 <app-services></app-services>
+} @placeholder {
+<div></div>
+}
 
 <app-portfolio></app-portfolio>
 
+
+@defer (on viewport) {
 <app-testimonials></app-testimonials>
+} @placeholder {
+<div></div>
+}
 
+@defer (on viewport) {
 <app-blog></app-blog>
+} @placeholder {
+<div></div>
+}
 
+@defer (on viewport) {
 <app-contact></app-contact>
+} @placeholder {
+<div></div>
+}
 
-<app-company></app-company>
+@defer (on viewport) {
+    <app-company></app-company>
+} @placeholder {
+    <div></div>
+}
+
 
 <app-footer></app-footer>
 
