@@ -204,15 +204,15 @@ Version      : 1.0
      */
     const cursorBall = document.getElementById('ball');
 
-    const xTo = gsap.quickTo(cursorBall, "x", {duration: 0.3, ease: 'power2.out'});
-    const yTo = gsap.quickTo(cursorBall, "y", {duration: 0.3, ease: 'power2.out'});
-
     document.addEventListener('mousemove', function (e) {
-        xTo(e.clientX);
-        yTo(e.clientY);
-        if (cursorBall.style.opacity !== "1") {
-            gsap.set(cursorBall, { opacity: 1 });
-        }
+        // Update cursor position and opacity on mousemove
+        gsap.to(cursorBall, {
+            duration: 0.3,
+            x: e.clientX,
+            y: e.clientY,
+            opacity: 1, // Ensure cursor is visible
+            ease: 'power2.out'
+        });
     });
 
     // Hover effect on elements
