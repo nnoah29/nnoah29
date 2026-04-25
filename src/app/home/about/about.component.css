@@ -17,7 +17,7 @@
 .about-image-part {
     text-align: center;
     padding: 40px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--main-color);
     border-radius: 10px;
 }
 
@@ -44,7 +44,7 @@
 
 .about-content-part h2 span {
     padding: 0 20px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--main-color);
 }
 
 
@@ -64,7 +64,7 @@
 
 .about-social ul li a {
     font-size: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--main-color);
     padding: 10px 14px;
     border-radius: 3pz;
 }

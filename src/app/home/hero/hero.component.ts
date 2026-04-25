@@ -64,8 +64,11 @@ export class HeroComponent implements AfterViewInit, OnDestroy {
   ): void {
     if (!ref?.nativeElement) return;
     const el = ref.nativeElement;
-    const top = el.getBoundingClientRect().top + scrollY - window.innerHeight / 2;
-    const offset = this.parallax.calcOffset(scrollY, top, speed);
+    
+    // For hero section elements, they are at the top of the page.
+    // By providing 0 as their baseline top, calcOffset evaluates to (scrollY - 0) * speed.
+    // This perfectly centers them to translateY(0px) unconditionally when scroll is at the very top.
+    const offset = this.parallax.calcOffset(scrollY, 0, speed);
     el.style.transform = `translateY(${-offset}px)`;
   }
 

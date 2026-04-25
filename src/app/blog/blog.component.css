@@ -9,7 +9,7 @@
 
 .blog-post-box {
     margin-bottom: 60px;
-    border: 1px solid #242424;
+    border: 1px solid var(--border-color);
     padding: 40px 20px;
 }
 

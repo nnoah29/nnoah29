@@ -109,38 +109,38 @@ p.copy-right-text {
     filter: blur(120px);
 }
 
-.glow-orange {
+.glow-gold {
     width: 40%;
     height: 40%;
     top: -15%;
     right: -10%;
-    background: radial-gradient(circle, rgba(249, 115, 22, 0.25) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.737) 0%, transparent 70%);
 }
 
-.glow-blue {
+.glow-dark {
     width: 40%;
     height: 40%;
     bottom: -15%;
     left: -10%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.20) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.20) 0%, transparent 100%);
 }
 
 @media (max-width: 768px) {
-    .glow-orange {
+    .glow-gold {
         width: 80%;
         height: 60%;
         top: -5%;
         right: -20%;
-        background: radial-gradient(circle, rgba(249, 115, 22, 0.5) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.5) 0%, transparent 70%);
         filter: blur(80px);
     }
 
-    .glow-blue {
+    .glow-dark {
         width: 80%;
         height: 60%;
         bottom: -5%;
         left: -20%;
-        background: radial-gradient(circle, rgba(59, 130, 246, 0.45) 0%, transparent 70%);
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.45) 0%, transparent 70%);
         filter: blur(80px);
     }
 }
