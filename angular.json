@@ -40,7 +40,10 @@
               "src/assets/css/responsive.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "@vercel/analytics"
+            ]
           },
           "configurations": {
             "production": {
