@@ -1,12 +1,12 @@
 import { Component, HostListener } from '@angular/core';
-import { NgForOf } from "@angular/common";
+
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav',
   imports: [
-    NgForOf, TranslateModule
-  ],
+    TranslateModule
+],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
@@ -25,7 +25,7 @@ export class NavComponent {
   activeSection = 'home';
 
   // Écoute le scroll pour détecter la section au centre de l'écran
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onScroll() {
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 

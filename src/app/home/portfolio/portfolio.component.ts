@@ -76,7 +76,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit, OnDestroy {
 
   // ── Data loading ────────────────────────────────────────────
   loadProjects(): void {
-    this.loading = true;
+    this.loading = !this.projects.length; // Only show loader if we have no data yet
     this.error = null;
 
     this.portfolioService.getProjects().subscribe({

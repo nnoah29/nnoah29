@@ -263,11 +263,7 @@
     transform: translateY(4px);
 }
 
-.story {
-    position: relative;
-    right: 4vw;
-    top: 14vh;
-}
+
 
 
 
@@ -344,6 +340,12 @@
     font-size: 2rem;
     margin: 10px 30px;
     color: var(--primary-color);
+}
+
+.story {
+    position: relative;
+    right: 4vw;
+    top: 14vh;
 }
 
 .title {

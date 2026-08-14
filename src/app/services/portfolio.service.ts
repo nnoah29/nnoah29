@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, PLATFORM_ID, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { isPlatformBrowser } from '@angular/common';
+import { Observable, throwError, of, merge } from 'rxjs';
+import { catchError, retry, tap, map, shareReplay } from 'rxjs/operators';
 
 export interface Project {
     name: string;
@@ -25,27 +26,71 @@ export interface PortfolioResponse {
     providedIn: 'root'
 })
 export class PortfolioService {
-    private apiUrl = 'https://nnoah29-backend.vercel.app/api/portfolio';
+    // Points to our local Vercel API proxy which handles Edge Caching
+    private apiUrl = '/api/portfolio';
+    private CACHE_KEY = 'portfolio_data_cache';
+    private platformId = inject(PLATFORM_ID);
 
     constructor(private http: HttpClient) { }
 
     /**
-     * Get portfolio projects from backend
+     * Get portfolio projects with Stale-While-Revalidate pattern
      */
     getProjects(): Observable<PortfolioResponse> {
-        return this.http.get<PortfolioResponse>(this.apiUrl).pipe(
-            retry(2), // Retry failed requests up to 2 times
-            catchError(this.handleError)
+        const fetch$ = this.http.get<PortfolioResponse>(this.apiUrl).pipe(
+            retry(2),
+            tap(data => this.setLocalCache(data)),
+            catchError(this.handleError),
+            shareReplay(1)
         );
+
+        if (isPlatformBrowser(this.platformId)) {
+            const cachedData = this.getLocalCache();
+            if (cachedData) {
+                // Return cached data immediately, then merge with fresh data from network
+                return merge(
+                    of({ ...cachedData, cached: true }),
+                    fetch$
+                );
+            }
+        }
+
+        return fetch$;
     }
 
     /**
      * Force refresh portfolio data (bypass cache)
      */
     refreshProjects(): Observable<PortfolioResponse> {
-        return this.http.get<PortfolioResponse>(`${this.apiUrl}/refresh`).pipe(
+        return this.http.get<PortfolioResponse>(`${this.apiUrl}?refresh=true`).pipe(
+            tap(data => this.setLocalCache(data)),
             catchError(this.handleError)
         );
+    }
+
+    private setLocalCache(data: PortfolioResponse): void {
+        if (isPlatformBrowser(this.platformId)) {
+            try {
+                localStorage.setItem(this.CACHE_KEY, JSON.stringify(data));
+            } catch (e) {
+                console.warn('Failed to save to localStorage:', e);
+            }
+        }
+    }
+
+    private getLocalCache(): PortfolioResponse | null {
+        if (isPlatformBrowser(this.platformId)) {
+            const cached = localStorage.getItem(this.CACHE_KEY);
+            if (cached) {
+                try {
+                    return JSON.parse(cached);
+                } catch (e) {
+                    console.error('Error parsing cached data:', e);
+                    return null;
+                }
+            }
+        }
+        return null;
     }
 
     /**
@@ -55,14 +100,11 @@ export class PortfolioService {
         let errorMessage = 'An error occurred';
 
         if (error.error instanceof ErrorEvent) {
-            // Client-side error
             errorMessage = `Error: ${error.error.message}`;
         } else {
-            // Server-side error
             errorMessage = `Server returned code ${error.status}: ${error.message}`;
-
             if (error.status === 0) {
-                errorMessage = 'Cannot connect to backend. Make sure the backend server is running on http://localhost:8000';
+                errorMessage = 'Cannot connect to backend.';
             }
         }
 

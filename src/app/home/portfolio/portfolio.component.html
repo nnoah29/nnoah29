@@ -1,71 +1,81 @@
 <section class="projects-area" id="portfolio">
 
-    <div class="container">
-        <!-- Section Title -->
-        <div class="row">
-            <div class="col-lg-12 project-header">
-                <div class="wow fadeInUp delay-0-2s section-title" #customIcon>
-                    <h2 [innerHTML]="'portfolio.title' | translate"></h2>
-                </div>
-            </div>
+  <div class="container">
+    <!-- Section Title -->
+    <div class="row">
+      <div class="col-lg-12 project-header">
+        <div class="wow fadeInUp delay-0-2s section-title" #customIcon>
+          <h2 [innerHTML]="'portfolio.title' | translate"></h2>
         </div>
-
-        <div class="portfolio-container-inner">
-            <!-- Loading -->
-            <div *ngIf="loading" class="loading-state">
-                <p>{{ 'portfolio.loading' | translate }}</p>
-            </div>
-
-            <!-- Error -->
-            <div *ngIf="error && !loading" class="error-state">
-                <p>{{ 'portfolio.error' | translate:{'error': error | uppercase} }}</p>
-                <button class="theme-btn" style="margin-top: 15px;" (click)="loadProjects()">{{ 'portfolio.retry' |
-                    translate }}</button>
-            </div>
-
-            <!-- Projects Grid -->
-            <div *ngIf="!loading && !error" class="projects-grid">
-                <div *ngFor="let project of projects; let i = index" class="project-card group">
-
-                    <!-- Icon & Title Row -->
-                    <div class="card-header">
-                        <div class="card-icon" [innerHTML]="getProjectSvgIcon(i, project.technologies)"></div>
-                        <h3 class="card-title">{{ project.name }}</h3>
-                    </div>
-
-                    <!-- Description -->
-                    <p class="card-desc">{{ project.description || ('portfolio.defaultDescription' | translate) }}</p>
-
-                    <!-- Tech Badges -->
-                    <div class="tech-badges" *ngIf="project.technologies && project.technologies.length > 0">
-                        <span class="badge" *ngFor="let tech of project.technologies | slice:0:3">[{{ tech | uppercase
-                            }}]</span>
-                        <span class="badge more" *ngIf="project.technologies.length > 3">[+{{
-                            project.technologies.length - 3 }}]</span>
-                    </div>
-
-                    <!-- Hover action -->
-                    <div class="card-action">
-                        <span>{{ 'portfolio.viewProject' | translate }}</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </div>
-
-                    <!-- Hidden Link Wrapper covering the whole item -->
-                    <a [href]="project.homepage || project.url" target="_blank" rel="noopener noreferrer"
-                        class="absolute-link">
-                        <span class="visually-hidden">View {{ project.name }}</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Empty state -->
-            <div *ngIf="!loading && !error && projects.length === 0" class="empty-state">
-                <p>{{ 'portfolio.emptyState' | translate }}</p>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <div class="portfolio-container-inner">
+      <!-- Loading -->
+      @if (loading) {
+      <div class="loading-state">
+        <p>{{ 'portfolio.loading' | translate }}</p>
+      </div>
+      }
+
+      <!-- Error -->
+      @if (error && !loading) {
+      <div class="error-state">
+        <p>{{ 'portfolio.error' | translate:{'error': error | uppercase} }}</p>
+        <button class="theme-btn" style="margin-top: 15px;" (click)="loadProjects()">{{ 'portfolio.retry' |
+          translate }}</button>
+      </div>
+      }
+
+      <!-- Projects Grid -->
+      @if (!loading && !error) {
+      <div class="projects-grid">
+        @for (project of projects; track project; let i = $index) {
+        <div class="project-card group">
+          <!-- Icon & Title Row -->
+          <div class="card-header">
+            <div class="card-icon" [innerHTML]="getProjectSvgIcon(i, project.technologies)"></div>
+            <h3 class="card-title">{{ project.name }}</h3>
+          </div>
+          <!-- Description -->
+          <p class="card-desc">{{ project.description || ('portfolio.defaultDescription' | translate) }}</p>
+          <!-- Tech Badges -->
+          @if (project.technologies && project.technologies.length > 0) {
+          <div class="tech-badges">
+            @for (tech of project.technologies | slice:0:3; track tech) {
+            <span class="badge">[{{ tech | uppercase
+              }}]</span>
+            }
+            @if (project.technologies.length > 3) {
+            <span class="badge more">[+{{
+              project.technologies.length - 3 }}]</span>
+            }
+          </div>
+          }
+          <!-- Hover action -->
+          <div class="card-action">
+            <span>{{ 'portfolio.viewProject' | translate }}</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+          <!-- Hidden Link Wrapper covering the whole item -->
+          <a [href]="project.homepage || project.url" target="_blank" rel="noopener noreferrer" class="absolute-link">
+            <span class="visually-hidden">View {{ project.name }}</span>
+          </a>
+        </div>
+        }
+      </div>
+      }
+
+      <!-- Empty state -->
+      @if (!loading && !error && projects.length === 0) {
+      <div class="empty-state">
+        <p>{{ 'portfolio.emptyState' | translate }}</p>
+      </div>
+      }
+    </div>
+  </div>
 </section>

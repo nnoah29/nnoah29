@@ -1,114 +1,117 @@
 <section id="contact" class="contact-area">
-    <div class="container">
-        <div class="row gx-5">
-            <div class="col-lg-5 mb-5 mb-lg-0">
-                <div class="contact-text-part wow fadeInUp delay-0-2s">
-                    <h2 class="massive-title">{{ 'contact.title' | translate }}</h2>
-                    <p class="subtitle mb-5">{{ 'contact.subtitle' | translate }}</p>
+  <div class="container">
+    <div class="row gx-5">
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <div class="contact-text-part wow fadeInUp delay-0-2s">
+          <h2 class="massive-title">{{ 'contact.title' | translate }}</h2>
+          <p class="subtitle mb-5">{{ 'contact.subtitle' | translate }}</p>
 
-                    <div class="contact-info-list">
-                        <div class="single-contact-item wow fadeInUp" data-wow-delay=".2s">
-                            <span class="circle-icon"><i class="ri-map-pin-line"></i></span>
-                            <div>
-                                <h3>{{ 'contact.officeLocation' | translate }}</h3>
-                                <p>{{ 'contact.officeLocationValue' | translate }}</p>
-                            </div>
-                        </div>
-                        <div class="single-contact-item wow fadeInUp" data-wow-delay=".4s">
-                            <span class="circle-icon"><i class="ri-headphone-line"></i></span>
-                            <div>
-                                <h3>{{ 'contact.contactNumber' | translate }}</h3>
-                                <p>{{ 'contact.contactNumberValue' | translate }}</p>
-                            </div>
-                        </div>
-                        <div class="single-contact-item wow fadeInUp" data-wow-delay=".6s">
-                            <span class="circle-icon"><i class="ri-mail-line"></i></span>
-                            <div>
-                                <h3>{{ 'contact.emailAddress' | translate }}</h3>
-                                <p>{{ 'contact.emailAddressValue' | translate }}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="contact-socials wow fadeInUp" data-wow-delay=".8s">
-                        <h3>{{ 'contact.followMe' | translate }}</h3>
-                        <ul class="social-links">
-                            <li><a href="https://www.linkedin.com/in/noah-toffa/" target="_blank"
-                                    rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a></li>
-                            <li><a href="https://github.com/nnoah29" target="_blank" rel="noopener noreferrer"><i
-                                        class="ri-github-line"></i></a></li>
-                            <li><a href="https://x.com/nnnoah29" target="_blank" rel="noopener noreferrer"><i
-                                        class="ri-twitter-x-line"></i></a></li>
-                            <li><a href="https://www.instagram.com/_iam_nnoah/" target="_blank"
-                                    rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
-                            </li>
-                            <li><a href="https://web.facebook.com/arie.noah.666793" target="_blank"
-                                    rel="noopener noreferrer"><i class="ri-facebook-circle-fill"></i></a></li>
-                            <li><a href="https://wa.me/2290142083553" target="_blank" rel="noopener noreferrer"><i
-                                        class="ri-whatsapp-line"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
+          <div class="contact-info-list">
+            <div class="single-contact-item wow fadeInUp" data-wow-delay=".2s">
+              <span class="circle-icon"><i class="ri-map-pin-line"></i></span>
+              <div>
+                <h3>{{ 'contact.officeLocation' | translate }}</h3>
+                <p>{{ 'contact.officeLocationValue' | translate }}</p>
+              </div>
             </div>
-
-            <div class="col-lg-7">
-                <div class="contact-form-wrapper wow fadeInUp delay-0-4s">
-                    <form id="contactForm" class="modern-contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-                        <h3 class="form-title">{{ 'contact.form.title' | translate }}</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" id="name" name="name" [(ngModel)]="formData.name" class="form-control" placeholder=" " required="">
-                                    <label for="name">{{ 'contact.form.fullName' | translate }}</label>
-                                    <span class="focus-border"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="email" id="email" name="email" [(ngModel)]="formData.email" class="form-control" placeholder=" " required="">
-                                    <label for="email">{{ 'contact.form.emailAddress' | translate }}</label>
-                                    <span class="focus-border"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input type="text" id="subject" name="subject" [(ngModel)]="formData.subject" class="form-control" placeholder=" " required="">
-                                    <label for="subject">{{ 'contact.form.subject' | translate }}</label>
-                                    <span class="focus-border"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea name="message" id="message" [(ngModel)]="formData.message" class="form-control" rows="4" placeholder=" "
-                                        required=""></textarea>
-                                    <label for="message">{{ 'contact.form.message' | translate }}</label>
-                                    <span class="focus-border"></span>
-                                </div>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <button type="submit" class="magnetic-btn" [disabled]="status === 'loading' || contactForm.invalid">
-                                    <span class="btn-text">
-                                        <ng-container *ngIf="status === 'loading'; else normalText">
-                                            {{ 'contact.form.sending' | translate }}
-                                        </ng-container>
-                                        <ng-template #normalText>
-                                            {{ 'contact.form.sendButton' | translate }}
-                                        </ng-template>
-                                    </span>
-                                    <span class="btn-icon"><i class="ri-arrow-right-up-line"></i></span>
-                                </button>
-                                
-                                <div *ngIf="status === 'success'" class="mt-3 form-alert alert-success">
-                                    {{ 'contact.form.success' | translate }}
-                                </div>
-                                <div *ngIf="status === 'error'" class="mt-3 form-alert alert-error">
-                                    {{ 'contact.form.error' | translate }}
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="single-contact-item wow fadeInUp" data-wow-delay=".4s">
+              <span class="circle-icon"><i class="ri-headphone-line"></i></span>
+              <div>
+                <h3>{{ 'contact.contactNumber' | translate }}</h3>
+                <p>{{ 'contact.contactNumberValue' | translate }}</p>
+              </div>
             </div>
+            <div class="single-contact-item wow fadeInUp" data-wow-delay=".6s">
+              <span class="circle-icon"><i class="ri-mail-line"></i></span>
+              <div>
+                <h3>{{ 'contact.emailAddress' | translate }}</h3>
+                <p>{{ 'contact.emailAddressValue' | translate }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials wow fadeInUp" data-wow-delay=".8s">
+            <h3>{{ 'contact.followMe' | translate }}</h3>
+            <ul class="social-links">
+              <li><a href="https://www.linkedin.com/in/noah-toffa/" target="_blank"
+                rel="noopener noreferrer"><i class="ri-linkedin-fill"></i></a></li>
+                <li><a href="https://github.com/nnoah29" target="_blank" rel="noopener noreferrer"><i
+                class="ri-github-line"></i></a></li>
+                <li><a href="https://x.com/nnnoah29" target="_blank" rel="noopener noreferrer"><i
+                class="ri-twitter-x-line"></i></a></li>
+                <li><a href="https://www.instagram.com/_iam_nnoah/" target="_blank"
+                  rel="noopener noreferrer"><i class="ri-instagram-line"></i></a>
+                </li>
+                <li><a href="https://web.facebook.com/arie.noah.666793" target="_blank"
+                  rel="noopener noreferrer"><i class="ri-facebook-circle-fill"></i></a></li>
+                  <li><a href="https://wa.me/2290142083553" target="_blank" rel="noopener noreferrer"><i
+                  class="ri-whatsapp-line"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="contact-form-wrapper wow fadeInUp delay-0-4s">
+              <form id="contactForm" class="modern-contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                <h3 class="form-title">{{ 'contact.form.title' | translate }}</h3>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" id="name" name="name" [(ngModel)]="formData.name" class="form-control" placeholder=" " required="">
+                      <label for="name">{{ 'contact.form.fullName' | translate }}</label>
+                      <span class="focus-border"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="email" id="email" name="email" [(ngModel)]="formData.email" class="form-control" placeholder=" " required="">
+                      <label for="email">{{ 'contact.form.emailAddress' | translate }}</label>
+                      <span class="focus-border"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input type="text" id="subject" name="subject" [(ngModel)]="formData.subject" class="form-control" placeholder=" " required="">
+                      <label for="subject">{{ 'contact.form.subject' | translate }}</label>
+                      <span class="focus-border"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <textarea name="message" id="message" [(ngModel)]="formData.message" class="form-control" rows="4" placeholder=" "
+                      required=""></textarea>
+                      <label for="message">{{ 'contact.form.message' | translate }}</label>
+                      <span class="focus-border"></span>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mt-3">
+                    <button type="submit" class="magnetic-btn" [disabled]="status === 'loading' || contactForm.invalid">
+                      <span class="btn-text">
+                        @if (status === 'loading') {
+                          {{ 'contact.form.sending' | translate }}
+                        } @else {
+                          {{ 'contact.form.sendButton' | translate }}
+                        }
+                      </span>
+                      <span class="btn-icon"><i class="ri-arrow-right-up-line"></i></span>
+                    </button>
+
+                    @if (status === 'success') {
+                      <div class="mt-3 form-alert alert-success">
+                        {{ 'contact.form.success' | translate }}
+                      </div>
+                    }
+                    @if (status === 'error') {
+                      <div class="mt-3 form-alert alert-error">
+                        {{ 'contact.form.error' | translate }}
+                      </div>
+                    }
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
