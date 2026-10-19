@@ -1,0 +1,79 @@
+@font-face { font-family: "Anton"; src: url("/assets/mira/fonts/Anton-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; font-weight: 400; src: url("/assets/mira/fonts/HankenGrotesk-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; font-weight: 500; src: url("/assets/mira/fonts/HankenGrotesk-Medium.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; font-weight: 600; src: url("/assets/mira/fonts/HankenGrotesk-SemiBold.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; src: url("/assets/mira/fonts/JetBrainsMono-Medium.ttf") format("truetype"); font-display: swap; }
+
+/* Colours of the MIRA app, dark theme with its default orange accent (app/lib/theme/app_theme.dart) */
+:host {
+  --bg: #1b1b1b;
+  --side: #1e1e1e;
+  --panel: #242424;
+  --raise: #2a2a2a;
+  --line: #2e2e2e;
+  --line-hi: #3a3a3a;
+  --strong: #ecebe6;
+  --text: #d6d5cd;
+  --muted: #adaca5;
+  --dim: #8b8a84;
+  --accent: #e8542b;
+  --accent-hi: #ff8a63;
+  --accent-soft: rgba(232, 84, 43, .12);
+  --on-accent: #1b1b1b;
+  --ok: #7fb069;
+  --display: "Anton", "Impact", sans-serif;
+  --sans: "Hanken Grotesk", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  display: block;
+  color-scheme: dark;
+}
+
+.mira {
+  min-height: 100vh;
+  background: radial-gradient(1100px 600px at 80% -10%, rgba(232, 84, 43, .07) 0%, transparent 60%), var(--bg);
+  color: var(--text);
+  font: 400 16px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+.mira a { font-family: inherit; transition: color .15s, border-color .15s, background-color .15s; }
+.mira a:focus-visible { outline: 1px solid var(--accent); outline-offset: 3px; }
+
+.wrap { width: min(1240px, 100% - 32px); margin-inline: auto; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; z-index: 10; padding: 10px 14px; background: var(--accent); color: var(--on-accent); font: 500 11px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; }
+
+.top { border-bottom: 1px solid var(--line); background: rgba(27, 27, 27, .88); position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); }
+.top .wrap { display: flex; align-items: center; gap: 40px; min-height: 64px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--accent); }
+.brand:hover { color: var(--accent-hi); }
+.logo-mark { width: 30px; height: 30px; display: block; }
+.brand span { font: 400 28px/1 var(--display); letter-spacing: .03em; color: var(--strong); }
+.brand em { font-style: normal; color: var(--accent); }
+.top nav { display: flex; gap: 32px; flex: 1; }
+.top nav a, .cta, .lang { font: 500 11px/1 var(--mono); letter-spacing: .22em; text-transform: uppercase; }
+.top nav a { color: var(--muted); padding: 24px 0 21px; border-bottom: 2px solid transparent; }
+.top nav a:hover { color: var(--strong); }
+.top nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+.lang { padding: 10px 0; color: var(--muted); }
+.lang:hover { color: var(--accent); }
+.cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border: 1px solid var(--accent); color: var(--accent); }
+.cta app-mira-icon { font-size: 15px; }
+.cta:hover { background: var(--accent); color: var(--on-accent); }
+
+.foot { border-top: 1px solid var(--line); padding: 32px 0 48px; font: 500 11px/1.8 var(--mono); letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 24px; }
+.foot a { color: var(--muted); }
+.foot a:hover { color: var(--accent); }
+
+@media (max-width: 760px) {
+  .top .wrap { gap: 20px; }
+  .top nav { gap: 20px; }
+  .top nav a.hide-sm { display: none; }
+  .cta { padding: 10px 12px; letter-spacing: .14em; }
+}
+@media (max-width: 420px) {
+  .top nav { display: none; }
+  .top .wrap { justify-content: space-between; }
+}

@@ -11,7 +11,13 @@ const DOMAIN = process.env.DOMAIN || 'https://www.toffanoah.com';
 const routes = [
   '/',
   '/en',
-  '/fr'
+  '/fr',
+  '/en/mira',
+  '/fr/mira',
+  '/en/mira/privacy',
+  '/fr/mira/privacy',
+  '/en/mira/terms',
+  '/fr/mira/terms'
 ];
 
 function generateSitemap() {

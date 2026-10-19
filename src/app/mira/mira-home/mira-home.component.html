@@ -1,0 +1,88 @@
+@let c = i18n.content();
+<section class="hero">
+  <div class="wrap">
+    <h1><span class="line">{{ c.hero.title1 }}</span> <span class="line">{{ c.hero.title2 }}<span class="caret"></span></span></h1>
+    <div class="intro">
+      <p class="lede">{{ c.hero.lede }}</p>
+      <div class="actions">
+        <a class="button primary" [routerLink]="i18n.home()" fragment="telecharger"><app-mira-icon name="download" /> {{ c.hero.download }}</a>
+        <a class="button" href="https://github.com/nnoah29/MIRA"><app-mira-icon name="code" /> {{ c.hero.source }}</a>
+      </div>
+      <p class="label">{{ c.hero.tags }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="shot">
+  <div class="wrap">
+    <figure>
+      <img src="/assets/mira/img/mira-app.webp" width="1909" height="1024" fetchpriority="high" [alt]="c.shotAlt">
+    </figure>
+  </div>
+</section>
+
+<section class="band" id="atouts">
+  <div class="wrap">
+    <h2>{{ c.featuresTitle }}<span class="caret"></span></h2>
+    <div class="grid">
+      @for (strength of c.strengths; track strength.label) {
+        <div class="cell">
+          <p class="label">{{ strength.label }}</p>
+          <h3>{{ strength.title }}</h3>
+          <p>{{ strength.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="band" id="comptes">
+  <div class="wrap">
+    <h2>{{ c.accountsTitle }}<span class="caret"></span></h2>
+    <ul class="accounts">
+      @for (account of accounts(); track account.initials) {
+        <li>
+          <span class="avatar" [style.background]="account.colour">{{ account.initials }}</span>
+          <span><strong>{{ account.name }}</strong><span class="label">{{ account.how }}</span></span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="telecharger">
+  <div class="wrap">
+    <h2>{{ c.downloadTitle }}<span class="caret"></span></h2>
+    <div class="tabs" role="tablist" [attr.aria-label]="c.download.systemLabel">
+      @for (tab of tabs(); track $index; let i = $index) {
+        <button type="button" role="tab" [id]="'mira-tab-' + i" [attr.aria-selected]="i === selected()" [attr.tabindex]="i === selected() ? 0 : -1"
+          aria-controls="mira-tab-panel" (click)="select(i)" (keydown.arrowright)="selectNext(1, $event)" (keydown.arrowleft)="selectNext(-1, $event)">{{ tab }}</button>
+      }
+    </div>
+    <div class="panel" id="mira-tab-panel" role="tabpanel" [attr.aria-labelledby]="'mira-tab-' + selected()">
+      <p class="label">{{ system() }}</p>
+      <div class="field">
+        <code>{{ download().file }}</code>
+        <a class="button primary" [href]="fileUrl()"><app-mira-icon name="download" /> {{ c.download.get }}</a>
+      </div>
+      @if (download().command; as command) {
+        <p class="label">{{ c.download.thenTerminal }}</p>
+        <div class="field">
+          <code>{{ command }}</code>
+          <button class="button" type="button" (click)="copy(command)"><app-mira-icon [name]="copied() === command ? 'check' : 'copy'" /> {{ copied() === command ? c.download.copied : c.download.copy }}</button>
+        </div>
+      }
+    </div>
+
+    <div class="panel script">
+      <p class="label accent">{{ c.download.installLabel }}</p>
+      <div class="field">
+        <code>{{ installCommand }}</code>
+        <button class="button" type="button" (click)="copy(installCommand)"><app-mira-icon [name]="copied() === installCommand ? 'check' : 'copy'" /> {{ copied() === installCommand ? c.download.copied : c.download.copy }}</button>
+      </div>
+      <p class="note">{{ c.download.installNote }}</p>
+    </div>
+
+    <p class="note">{{ c.requirements.before }}<a href="https://github.com/nnoah29/MIRA/releases/latest">{{ c.requirements.link }}</a>{{ c.requirements.after }}</p>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+@let c = i18n.content();
+<div class="mira">
+  <a class="skip" [routerLink]="[]" fragment="mira-contenu">{{ c.skip }}</a>
+
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" [routerLink]="i18n.home()" aria-label="MIRA">
+        <svg class="logo-mark" viewBox="0 0 200 200" aria-hidden="true">
+          <path d="M30 118V30H170V170H82" fill="none" stroke="currentColor" stroke-width="12" />
+          <path d="M75.21 124V60.41H94.58L99.93 99.18L105.24 60.41H124.79V124H113.15V78.18L105.85 124H94.44L86.7 78.18V124Z" fill="currentColor" />
+        </svg>
+        <span>MI<em>RA</em></span>
+      </a>
+      <nav aria-label="Main">
+        <a class="hide-sm" [routerLink]="i18n.home()" fragment="atouts">{{ c.nav.features }}</a>
+        <a class="hide-sm" [routerLink]="i18n.home()" fragment="comptes">{{ c.nav.accounts }}</a>
+        <a [routerLink]="i18n.privacy()" routerLinkActive="active" ariaCurrentWhenActive="page">{{ c.nav.privacy }}</a>
+      </nav>
+      <a class="lang" [href]="otherLangUrl()" [attr.hreflang]="c.nav.switchTo.toLowerCase()" [attr.aria-label]="c.nav.switchLabel" (click)="switchLanguage($event)">{{ c.nav.switchTo }}</a>
+      <a class="cta" [routerLink]="i18n.home()" fragment="telecharger"><app-mira-icon name="download" /> {{ c.nav.download }}</a>
+    </div>
+  </header>
+
+  <main id="mira-contenu">
+    <router-outlet />
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>{{ c.footer.credit }}</span>
+      <nav aria-label="Footer">
+        <a [routerLink]="i18n.privacy()">{{ c.footer.privacy }}</a>
+        <a [routerLink]="i18n.terms()">{{ c.footer.terms }}</a>
+        <a href="https://github.com/nnoah29/MIRA">{{ c.footer.source }}</a>
+        <a href="mailto:iam@toffanoah.com">{{ c.footer.contact }}</a>
+      </nav>
+    </div>
+  </footer>
+</div>

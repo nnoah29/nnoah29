@@ -3,19 +3,55 @@
 
   <url>
     <loc>https://www.toffanoah.com/</loc>
-    <lastmod>2026-04-13T22:52:28.716Z</lastmod>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.toffanoah.com/en</loc>
-    <lastmod>2026-04-13T22:52:28.716Z</lastmod>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.toffanoah.com/fr</loc>
-    <lastmod>2026-04-13T22:52:28.716Z</lastmod>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.toffanoah.com/en/mira</loc>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.toffanoah.com/fr/mira</loc>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.toffanoah.com/en/mira/privacy</loc>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.toffanoah.com/fr/mira/privacy</loc>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.toffanoah.com/en/mira/terms</loc>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.toffanoah.com/fr/mira/terms</loc>
+    <lastmod>2026-10-19T08:32:36.560Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

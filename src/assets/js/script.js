@@ -183,7 +183,7 @@ Version      : 1.0
      */
     const cursorBall = document.getElementById('ball');
 
-    document.addEventListener('mousemove', function (e) {
+    if (cursorBall) document.addEventListener('mousemove', function (e) {
         // Update cursor position and opacity on mousemove
         gsap.to(cursorBall, {
             duration: 0.3,
@@ -196,7 +196,7 @@ Version      : 1.0
 
     // Hover effect on elements
     const hoverElements = document.querySelectorAll('a');
-    hoverElements.forEach(function (element) {
+    if (cursorBall) hoverElements.forEach(function (element) {
         element.addEventListener('mouseenter', function () {
             // Animate cursorBall on mouseenter
             cursorBall.classList.add('hovered');

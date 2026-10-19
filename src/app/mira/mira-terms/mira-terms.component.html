@@ -1,0 +1,46 @@
+@let c = i18n.content();
+<article class="doc">
+  <div class="wrap">
+    <nav class="doc-tabs" [attr.aria-label]="c.docs.tabsLabel">
+      <a [routerLink]="i18n.privacy()" routerLinkActive="active" ariaCurrentWhenActive="page">{{ c.docs.privacy }}</a>
+      <a [routerLink]="i18n.terms()" routerLinkActive="active" ariaCurrentWhenActive="page">{{ c.docs.terms }}</a>
+    </nav>
+    @if (i18n.lang() === 'fr') {
+      <h1>{{ c.docs.terms }}<span class="caret"></span></h1>
+          <p class="updated">En vigueur au 19 octobre 2026.</p>
+
+          <h2>Le logiciel</h2>
+          <p>MIRA est un logiciel libre et gratuit, publié sous <a href="https://github.com/nnoah29/MIRA/blob/main/LICENSE">licence MIT</a>. Vous pouvez l'utiliser, le copier, le modifier et le redistribuer dans les conditions de cette licence.</p>
+
+          <h2>Sans garantie</h2>
+          <p>MIRA est fourni tel quel, sans garantie d'aucune sorte. Le développeur ne peut être tenu responsable d'une perte de données ou d'un dommage lié à son utilisation. Gardez vos mails importants sur le serveur de votre messagerie.</p>
+
+          <h2>Vos comptes de messagerie</h2>
+          <p>Vous restez soumis aux conditions de votre fournisseur de messagerie (Google, Microsoft, Yahoo ou autre). MIRA n'est ni affilié à ces services, ni approuvé par eux. Gmail est une marque de Google LLC, Outlook une marque de Microsoft Corporation.</p>
+
+          <h2>Vos données</h2>
+          <p>MIRA ne collecte aucune donnée. Le détail est sur la page <a [routerLink]="i18n.privacy()">Confidentialité</a>.</p>
+
+          <h2>Contact</h2>
+          <p><a href="mailto:iam@toffanoah.com">iam@toffanoah.com</a></p>
+    } @else {
+      <h1>{{ c.docs.terms }}<span class="caret"></span></h1>
+      <p class="updated">In effect as of 19 October 2026.</p>
+
+      <h2>The software</h2>
+      <p>MIRA is free software, released under the <a href="https://github.com/nnoah29/MIRA/blob/main/LICENSE">MIT licence</a>. You may use, copy, modify and redistribute it under the terms of that licence.</p>
+
+      <h2>No warranty</h2>
+      <p>MIRA is provided as is, without warranty of any kind. Its developer cannot be held liable for any data loss or damage linked to its use. Keep your important mail on your provider's server.</p>
+
+      <h2>Your mail accounts</h2>
+      <p>You remain bound by the terms of your mail provider (Google, Microsoft, Yahoo or another). MIRA is neither affiliated with these services nor endorsed by them. Gmail is a trademark of Google LLC, Outlook a trademark of Microsoft Corporation.</p>
+
+      <h2>Your data</h2>
+      <p>MIRA collects no data. The details are on the <a [routerLink]="i18n.privacy()">Privacy</a> page.</p>
+
+      <h2>Contact</h2>
+      <p><a href="mailto:iam@toffanoah.com">iam@toffanoah.com</a></p>
+    }
+  </div>
+</article>
