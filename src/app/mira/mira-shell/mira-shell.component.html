@@ -12,8 +12,6 @@
         <span>MI<em>RA</em></span>
       </a>
       <nav aria-label="Main">
-        <a class="hide-sm" [routerLink]="i18n.home()" fragment="atouts">{{ c.nav.features }}</a>
-        <a class="hide-sm" [routerLink]="i18n.home()" fragment="comptes">{{ c.nav.accounts }}</a>
         <a [routerLink]="i18n.privacy()" routerLinkActive="active" ariaCurrentWhenActive="page">{{ c.nav.privacy }}</a>
       </nav>
       <a class="lang" [href]="otherLangUrl()" [attr.hreflang]="c.nav.switchTo.toLowerCase()" [attr.aria-label]="c.nav.switchLabel" (click)="switchLanguage($event)">{{ c.nav.switchTo }}</a>

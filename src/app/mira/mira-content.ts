@@ -22,7 +22,7 @@ export interface MiraDownloadText {
 export interface MiraContent {
   meta: { home: string; privacy: string; terms: string; description: string };
   skip: string;
-  nav: { features: string; accounts: string; privacy: string; download: string; switchTo: string; switchLabel: string };
+  nav: { privacy: string; download: string; switchTo: string; switchLabel: string };
   footer: { credit: string; privacy: string; terms: string; source: string; contact: string };
   hero: { title1: string; title2: string; lede: string; download: string; source: string; tags: string };
   shotAlt: string;
@@ -45,7 +45,7 @@ export const MIRA_FR: MiraContent = {
     description: 'MIRA est un client mail pour Linux et Android, libre et gratuit. Un client mail comme un autre, en plus joli et plus amusant à utiliser.'
   },
   skip: 'Aller au contenu',
-  nav: { features: 'Atouts', accounts: 'Comptes', privacy: 'Confidentialité', download: 'Télécharger', switchTo: 'EN', switchLabel: 'View this page in English' },
+  nav: { privacy: 'Confidentialité', download: 'Télécharger', switchTo: 'EN', switchLabel: 'View this page in English' },
   footer: { credit: 'MIRA · Noah Toffa · Licence MIT', privacy: 'Confidentialité', terms: 'Conditions', source: 'Code source', contact: 'Contact' },
   hero: {
     title1: 'Juste un client mail,',
@@ -105,7 +105,7 @@ export const MIRA_EN: MiraContent = {
     description: 'MIRA is a free, open-source mail client for Linux and Android. A mail client like any other, just prettier and more fun to use.'
   },
   skip: 'Skip to content',
-  nav: { features: 'Features', accounts: 'Accounts', privacy: 'Privacy', download: 'Download', switchTo: 'FR', switchLabel: 'Voir cette page en français' },
+  nav: { privacy: 'Privacy', download: 'Download', switchTo: 'FR', switchLabel: 'Voir cette page en français' },
   footer: { credit: 'MIRA · Noah Toffa · MIT licence', privacy: 'Privacy', terms: 'Terms', source: 'Source code', contact: 'Contact' },
   hero: {
     title1: 'Just a mail client,',
