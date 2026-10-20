@@ -50,7 +50,9 @@
     "retry": "RÉESSAYER",
     "defaultDescription": "RÉFÉRENTIEL GITHUB DU PROJET",
     "viewProject": "VOIR_LE_PROJET",
-    "emptyState": "AUCUN RÉSULTAT TROUVÉ."
+    "emptyState": "AUCUN RÉSULTAT TROUVÉ.",
+    "miraDescription": "Un client mail libre et gratuit pour Linux et Android.",
+    "seeAll": "Voir tous les projets"
   },
   "testimonials": {
     "title": "Ce qu'ils disent",
@@ -110,5 +112,17 @@
     "posted": "Publié",
     "readMore": "Lire sur LinkedIn",
     "postAlt": "Publication LinkedIn"
+  },
+  "projects": {
+    "title": "Projets",
+    "title1": "Tous mes",
+    "title2": "projets",
+    "back": "Accueil",
+    "subtitle": "Tout ce que je construis en public : les projets hébergés sur ce site, ceux que j'ai épinglés, et tous les autres dépôts publics sur GitHub.",
+    "count": "projets",
+    "sectionHosted": "Hébergés sur ce site",
+    "sectionPinned": "Épinglés",
+    "sectionAll": "Tous les dépôts publics",
+    "error": "Impossible de charger les dépôts. Veuillez réessayer plus tard."
   }
 }

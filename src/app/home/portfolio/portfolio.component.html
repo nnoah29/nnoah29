@@ -30,43 +30,17 @@
       <!-- Projects Grid -->
       @if (!loading && !error) {
       <div class="projects-grid">
-        @for (project of projects; track project; let i = $index) {
-        <div class="project-card group">
-          <!-- Icon & Title Row -->
-          <div class="card-header">
-            <div class="card-icon" [innerHTML]="getProjectSvgIcon(i, project.technologies)"></div>
-            <h3 class="card-title">{{ project.name }}</h3>
-          </div>
-          <!-- Description -->
-          <p class="card-desc">{{ project.description || ('portfolio.defaultDescription' | translate) }}</p>
-          <!-- Tech Badges -->
-          @if (project.technologies && project.technologies.length > 0) {
-          <div class="tech-badges">
-            @for (tech of project.technologies | slice:0:3; track tech) {
-            <span class="badge">[{{ tech | uppercase
-              }}]</span>
-            }
-            @if (project.technologies.length > 3) {
-            <span class="badge more">[+{{
-              project.technologies.length - 3 }}]</span>
-            }
-          </div>
-          }
-          <!-- Hover action -->
-          <div class="card-action">
-            <span>{{ 'portfolio.viewProject' | translate }}</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </div>
-          <!-- Hidden Link Wrapper covering the whole item -->
-          <a [href]="project.homepage || project.url" target="_blank" rel="noopener noreferrer" class="absolute-link">
-            <span class="visually-hidden">View {{ project.name }}</span>
-          </a>
-        </div>
+        @for (project of projects; track project.name; let i = $index) {
+        <app-project-card [project]="project" [index]="i" />
         }
+      </div>
+      }
+
+      <!-- Link to the full projects page -->
+      @if (!loading) {
+      <div class="see-all">
+        <a class="theme-btn" [routerLink]="['/', translate.currentLang, 'projects']">{{ 'portfolio.seeAll' | translate }}<i
+            class="ri-arrow-right-line"></i></a>
       </div>
       }
 

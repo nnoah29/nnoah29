@@ -1,4 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, afterNextRender, inject } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Router, RouterLink } from '@angular/router';
 
@@ -15,6 +15,11 @@ export class HeaderComponent {
   translate = inject(TranslateService);
   router = inject(Router);
 
+  constructor() {
+    // Pages that open on a dark section (e.g. the projects page) must not wait for a scroll event.
+    afterNextRender(() => this.onDark = this.isDarkBehindHeader());
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const tenPercentHeight = window.innerHeight * 0.01;
@@ -24,7 +29,7 @@ export class HeaderComponent {
 
   private isDarkBehindHeader(): boolean {
     const probe = document.elementsFromPoint(window.innerWidth * 0.1, 72)
-      .filter(el => !el.closest('app-header'));
+      .filter(el => !el.closest('app-header, .preloader'));
     for (const el of probe) {
       for (let node: Element | null = el; node; node = node.parentElement) {
         const m = getComputedStyle(node).backgroundColor.match(/[\d.]+/g);
@@ -37,7 +42,7 @@ export class HeaderComponent {
   }
 
   switchLanguage(lang: string) {
-    this.router.navigate(['/', lang]);
+    this.router.navigateByUrl(this.router.url.replace(/^\/(en|fr)(?=[/?#]|$)/, `/${lang}`));
   }
 }
 

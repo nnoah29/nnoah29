@@ -16,5 +16,10 @@ export const routes: Routes = [
     canActivate: [miraLangGuard],
     loadChildren: () => import('./mira/mira.routes').then(m => m.MIRA_ROUTES)
   },
+  {
+    path: ':lang/projects',
+    canActivate: [langGuard],
+    loadComponent: () => import('./projects/projects.component').then(m => m.ProjectsComponent)
+  },
   { path: ':lang', component: HomeComponent, canActivate: [langGuard] }
 ];

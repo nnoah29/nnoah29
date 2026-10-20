@@ -1,0 +1,40 @@
+<div class="project-card group">
+  <!-- Icon & Title Row -->
+  <div class="card-header">
+    <div class="card-icon" [innerHTML]="icon()"></div>
+    <h3 class="card-title" [attr.title]="project().name">{{ project().name }}</h3>
+  </div>
+  <!-- Description -->
+  @let desc = project().descriptionKey ? (project().descriptionKey! | translate) : (project().description || ('portfolio.defaultDescription' | translate));
+  <p class="card-desc" [attr.title]="desc">{{ desc }}</p>
+  <!-- Tech Badges -->
+  @if (project().technologies.length > 0) {
+  <div class="tech-badges">
+    @for (tech of project().technologies.slice(0, 3); track tech) {
+    <span class="badge">[{{ tech.toUpperCase() }}]</span>
+    }
+    @if (project().technologies.length > 3) {
+    <span class="badge more">[+{{ project().technologies.length - 3 }}]</span>
+    }
+  </div>
+  }
+  <!-- Hover action -->
+  <div class="card-action">
+    <span>{{ 'portfolio.viewProject' | translate }}</span>
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </div>
+  <!-- Link wrapper covering the whole card -->
+  @if (project().route) {
+  <a [routerLink]="['/', translate.currentLang, project().route]" class="absolute-link">
+    <span class="visually-hidden">{{ 'portfolio.viewProject' | translate }} {{ project().name }}</span>
+  </a>
+  } @else {
+  <a [href]="project().homepage || project().url" target="_blank" rel="noopener noreferrer" class="absolute-link">
+    <span class="visually-hidden">{{ 'portfolio.viewProject' | translate }} {{ project().name }}</span>
+  </a>
+  }
+</div>

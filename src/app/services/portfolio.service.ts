@@ -14,6 +14,10 @@ export interface Project {
     technologies: string[];
     stars: number;
     category: string | null;
+    /** Set for projects hosted on this site: the card links to this route instead of an external URL. */
+    route?: string;
+    /** Translation key used instead of `description` when set. */
+    descriptionKey?: string;
 }
 
 export interface PortfolioResponse {

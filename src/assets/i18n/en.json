@@ -50,7 +50,9 @@
     "retry": "RETRY",
     "defaultDescription": "GITHUB PROJECT REPOSITORY",
     "viewProject": "VIEW_PROJECT",
-    "emptyState": "NO RECORDS FOUND."
+    "emptyState": "NO RECORDS FOUND.",
+    "miraDescription": "A free, open-source mail client for Linux and Android.",
+    "seeAll": "See all projects"
   },
   "testimonials": {
     "title": "What they say",
@@ -110,5 +112,17 @@
     "posted": "Posted",
     "readMore": "Read more on LinkedIn",
     "postAlt": "LinkedIn post"
+  },
+  "projects": {
+    "title": "Projects",
+    "title1": "All",
+    "title2": "projects",
+    "back": "Home",
+    "subtitle": "Everything I build in public: the projects hosted on this site, the ones I pinned, and every other public repository on GitHub.",
+    "count": "projects",
+    "sectionHosted": "Hosted on this site",
+    "sectionPinned": "Pinned",
+    "sectionAll": "All public repositories",
+    "error": "Could not load the repositories. Please try again later."
   }
 }

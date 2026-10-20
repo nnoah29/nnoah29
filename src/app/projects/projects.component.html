@@ -1,0 +1,71 @@
+<app-cursor></app-cursor>
+<app-header></app-header>
+
+<main class="projects-page">
+  <div class="glow" aria-hidden="true"></div>
+
+  <div class="container">
+    <header class="page-head">
+      <a class="back" [routerLink]="['/', translate.currentLang]">← {{ 'projects.back' | translate }}</a>
+      <h1><span class="solid">{{ 'projects.title1' | translate }}</span>&ngsp;<span class="stroke">{{ 'projects.title2' | translate }}</span></h1>
+      <p class="lede">{{ 'projects.subtitle' | translate }}</p>
+      @if (!loading()) {
+      <p class="count">{{ total() }} {{ 'projects.count' | translate }}</p>
+      }
+    </header>
+
+    <section class="block" id="hosted">
+      <div class="block-head">
+        <span class="num">01</span>
+        <h2>{{ 'projects.sectionHosted' | translate }}</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="projects-grid">
+        @for (project of hosted; track project.name; let i = $index) {
+        <app-project-card [project]="project" [index]="i" />
+        }
+      </div>
+    </section>
+
+    @if (loading()) {
+    <div class="state">{{ 'portfolio.loading' | translate }}</div>
+    } @else {
+
+    @if (pinned().length > 0) {
+    <section class="block" id="pinned">
+      <div class="block-head">
+        <span class="num">02</span>
+        <h2>{{ 'projects.sectionPinned' | translate }}</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="projects-grid">
+        @for (project of pinned(); track project.name; let i = $index) {
+        <app-project-card [project]="project" [index]="i + 1" />
+        }
+      </div>
+    </section>
+    }
+
+    @if (others().length > 0) {
+    <section class="block" id="all">
+      <div class="block-head">
+        <span class="num">03</span>
+        <h2>{{ 'projects.sectionAll' | translate }}</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="projects-grid">
+        @for (project of others(); track project.name; let i = $index) {
+        <app-project-card [project]="project" [index]="i + 1 + pinned().length" />
+        }
+      </div>
+    </section>
+    }
+
+    @if (failed() && pinned().length === 0 && others().length === 0) {
+    <div class="state error">{{ 'projects.error' | translate }}</div>
+    }
+    }
+  </div>
+</main>
+
+<app-footer></app-footer>

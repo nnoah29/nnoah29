@@ -12,6 +12,8 @@ const routes = [
   '/',
   '/en',
   '/fr',
+  '/en/projects',
+  '/fr/projects',
   '/en/mira',
   '/fr/mira',
   '/en/mira/privacy',

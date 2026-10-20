@@ -1,0 +1,205 @@
+:host {
+    display: contents;
+}
+
+/* ── Project Card (Brutalist) ────────── */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+    background: transparent;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ── Descending Background Animation ────────── */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: var(--primary-color);*/
+    background: rgb(208, 207, 202) !important;
+    transform: translateY(-101%);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+/* Color Inversion on Hover */
+.project-card:hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.project-card:hover::before {
+    transform: translateY(0);
+}
+
+/* ── Header Row (Icon + Title) ────────────────── */
+.card-header {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    margin-bottom: 24px;
+}
+
+/* ── Icon ─────────────────────────────────── */
+.card-icon {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: var(--primary-color);
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .card-icon {
+    color: var(--main-color);
+}
+
+.card-icon ::ng-deep svg {
+    width: 32px;
+    height: 32px;
+    display: block;
+    stroke-width: 1.5;
+}
+
+/* ── Title ───────────────────── */
+.card-title {
+    position: relative;
+    z-index: 10;
+    font-family: var(--title-font, "Oswald", sans-serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin: 0;
+    margin-left: 16px;
+    line-height: 1;
+    /* one line, "…" when the name is too long */
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .card-title {
+    color: var(--main-color);
+}
+
+/* ── Description ──────────────────────────── */
+.card-desc {
+    position: relative;
+    z-index: 10;
+    font-family: var(--text-font, "Poppins", sans-serif);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+    /* at most 2 lines, "…" when the text is longer */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    /* Pushes badges/actions to bottom */
+    text-transform: uppercase;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .card-desc {
+    color: var(--main-color);
+}
+
+/* ── Tech Badges ──────────────────────────── */
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 10;
+}
+
+.badge {
+    font-family: var(--title-font, "Oswald", sans-serif);
+    padding: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    white-space: nowrap;
+    letter-spacing: 1px;
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .badge {
+    color: var(--main-color);
+}
+
+/* ── Card Action (View Project) ────────────── */
+.card-action {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--primary-color);
+    font-family: var(--title-font, "Oswald", sans-serif);
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+    transition: padding 0.2s ease, color 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-action svg {
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover .card-action {
+    color: var(--main-color);
+    border-top-color: var(--main-color);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.project-card:hover .card-action svg {
+    transform: translateX(4px);
+}
+
+/* ── Link ─────────────────────────────────── */
+.absolute-link {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
