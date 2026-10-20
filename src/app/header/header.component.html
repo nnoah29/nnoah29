@@ -1,11 +1,11 @@
-<header class="main-header">
+<header class="main-header" [class.on-dark]="onDark">
     <div class="header-upper">
         <div class="container">
             <div class="header-inner">
                 <div class="row align-items-center">
                     <div class="col-xl-2 col-lg-2 col-md-6 col-6 col-sm-3">
                         <div class="logo-area">
-                            <div class="logo"><a href="index.html"><img src="assets/images/logo.webp" alt="logo"
+                            <div class="logo"><a [routerLink]="['/', translate.currentLang]" aria-label="Noah TOFFA"><img src="assets/images/logo.webp" alt="logo"
                             width="60" height="24"></a></div>
                         </div>
                     </div>
@@ -14,9 +14,11 @@
                         <div class="main-menu mr-3"></div>
                         <div class="lang-switcher">
                             <button class="btn btn-sm btn-outline-light" (click)="switchLanguage('fr')"
+                                [attr.aria-pressed]="translate.currentLang === 'fr'"
                                 [class.active]="translate.currentLang === 'fr'">FR</button>
-                            <span class="text-white mx-1">|</span>
+                            <span class="lang-sep mx-1">|</span>
                             <button class="btn btn-sm btn-outline-light" (click)="switchLanguage('en')"
+                                [attr.aria-pressed]="translate.currentLang === 'en'"
                                 [class.active]="translate.currentLang === 'en'">EN</button>
                         </div>
                     </div>

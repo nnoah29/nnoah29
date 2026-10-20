@@ -4,20 +4,25 @@
 * ----------------------------------------------------------------------------------------
 */
 .main-hero-area {
-    padding-top: 8.5vh;
+    /* 62px = fixed header height; content is centered in the remaining space */
+    padding-top: 62px;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: var(--primary-color);
     /*background: #E6E4E0;*/
-    /*background-image: url("../../../assets/images/bg.png");*/
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: 100svh;
     position: relative;
 }
 
 
 .hero-content h2 {
     font-weight: 500;
-    font-size: clamp(7.875em, 10.125em, 11.8125em);
+    font-size: clamp(4.5rem, 11.25vw, 11.8rem);
     text-transform: uppercase;
     text-align: center;
     color: var(--main-color);
@@ -106,13 +111,6 @@
     display: block;
 }
 
-@media (orientation: portrait) {
-    .hero-image {
-        display: none;
-    }
-}
-
-
 .hero-image {
     text-align: center;
     position: relative;
@@ -131,11 +129,14 @@
 }
 
 .hero-image img {
-    width: 18vw;
+    /* grows on tall (portrait) screens so the photo doesn't look lost */
+    width: max(18vw, 22vh);
+    height: auto;
+    aspect-ratio: 900 / 1260;
+    object-fit: cover;
     text-align: left;
     border-radius: 20px;
     /*border-bottom: 5px solid #000000;*/
-    margin-top: -100px;
     rotate: 5deg;
     -webkit-transition: 0.4s;
     transition: 0.4s;
@@ -355,16 +356,17 @@
 
 .iam {
     display: none;
+    margin-right: 0.25em;
 }
 
 /* Flexbox pour les écrans larges (> 1000px) */
 @media (min-width: 1001px) {
     .row-2 {
         position: relative;
-        top: 20vh;
+        margin-top: 3vh;
         display: flex;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         gap: 2rem;
     }
 
@@ -402,6 +404,11 @@
         display: none;
     }
 
+    /* The portrait lives in the "O" of the title at this width */
+    .hero-image {
+        display: none;
+    }
+
     .row-2 {
         margin: 2vh auto;
     }
@@ -428,13 +435,14 @@
     }
 
     .row:nth-child(2)>div:nth-child(1) .d-flex>div:nth-child(1) {
-        order: 2;
-        /* nido */
+        order: 1;
+        /* nido (tagline) */
     }
 
     .row:nth-child(2)>div:nth-child(1) .d-flex>div:nth-child(2) {
-        order: 1;
-        /* cv */
+        order: 2;
+        /* cv button, after the tagline */
+        text-align: center;
     }
 
     .row:nth-child(2)>div:nth-child(2) {
@@ -443,8 +451,7 @@
     }
 
     .nido,
-    .story,
-    .cv {
+    .story {
         left: 0;
         right: 0;
         top: 0;
@@ -455,11 +462,14 @@
     }
 
     .cv {
+        display: inline-block;
+        width: auto;
         margin: 3vh auto;
     }
 
     .iam {
         display: inline;
+        margin-right: 0.25em;
     }
 
     .photo-o {
@@ -468,7 +478,7 @@
         -webkit-text-fill-color: transparent !important;
         -webkit-text-stroke: 0 transparent !important;
         /* Hides any text outline */
-        background-image: url('../../../assets/images/about/me_nb.png');
+        background-image: url('../../../assets/images/about/me_nb.webp');
         background-size: cover;
         background-position: center 20%;
         border-radius: 50px;
@@ -614,4 +624,11 @@
 
 .toffa {
     -webkit-text-stroke-color: var(--main-color);
+}
+
+/* Keep the right-hand text clear of the fixed side navigation */
+@media (min-width: 1001px) and (max-width: 1200px) {
+    .main-hero-area>.container {
+        padding-right: 3.5rem;
+    }
 }

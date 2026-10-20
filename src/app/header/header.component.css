@@ -166,3 +166,40 @@
     flex-wrap: nowrap;
     white-space: nowrap;
 }
+/* Header contrast: light page = dark logo/buttons, dark page = light logo/buttons */
+.logo img {
+    transition: filter 0.3s;
+}
+
+.main-header.on-dark .logo img {
+    filter: invert(1);
+}
+
+.lang-switcher .btn {
+    color: var(--main-color, #070707);
+    border-color: var(--main-color, #070707);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.lang-switcher .btn.active {
+    background-color: var(--main-color, #070707);
+    color: var(--primary-color, #d0cfca);
+}
+
+.lang-sep {
+    color: var(--main-color, #070707);
+}
+
+.main-header.on-dark .lang-switcher .btn {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.main-header.on-dark .lang-switcher .btn.active {
+    background-color: #fff;
+    color: #070707;
+}
+
+.main-header.on-dark .lang-sep {
+    color: #fff;
+}

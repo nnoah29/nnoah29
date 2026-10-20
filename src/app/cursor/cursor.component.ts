@@ -3,12 +3,12 @@ import { isPlatformBrowser } from '@angular/common';
 import { gsap } from 'gsap';
 
 @Component({
-  selector: 'app-cusor',
+  selector: 'app-cursor',
   imports: [],
-  templateUrl: './cusor.component.html',
-  styleUrl: './cusor.component.css'
+  templateUrl: './cursor.component.html',
+  styleUrl: './cursor.component.css'
 })
-export class CusorComponent implements AfterViewInit, OnDestroy {
+export class CursorComponent implements AfterViewInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private mouseMoveHandler: any;
 

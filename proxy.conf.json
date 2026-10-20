@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "target": "https://nnoah29-backend.vercel.app",
+    "secure": true,
+    "changeOrigin": true
+  }
+}

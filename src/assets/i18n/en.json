@@ -12,7 +12,7 @@
     "title": "Software Engineer",
     "subtitle": "BUILDING SYSTEMS. \nNOT JUST APPS.",
     "cvButton": "Get my CV",
-    "iam": "i am a",
+    "iam": "I am a",
     "description": "Systems-focused. Performance-driven. AI-enabled. Building scalable backend systems."
   },
   "about": {
@@ -80,7 +80,7 @@
     "title": "Let's Start a Project",
     "subtitle": "Feel free to contact me if you have a project or a technical challenge to solve.",
     "officeLocation": "Office Location",
-    "officeLocationValue": "Bénin, Cotonou",
+    "officeLocationValue": "Cotonou, Benin",
     "contactNumber": "Contact Number",
     "contactNumberValue": "+229 01 42 08 35 53",
     "emailAddress": "Email Address",
@@ -97,5 +97,18 @@
       "success": "Your message has been sent successfully!",
       "error": "An error occurred. Please try again later."
     }
+  },
+  "footer": {
+    "prompt": "Have a project in mind?",
+    "lets": "let's",
+    "work": "work"
+  },
+  "blog": {
+    "title": "Stories",
+    "loading": "Loading stories...",
+    "error": "Failed to load stories.",
+    "posted": "Posted",
+    "readMore": "Read more on LinkedIn",
+    "postAlt": "LinkedIn post"
   }
 }

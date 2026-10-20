@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface LinkedInPost {
   id: string;
@@ -13,7 +14,7 @@ export interface LinkedInPost {
 
 @Component({
   selector: 'app-blog',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -39,6 +40,6 @@ export class BlogComponent implements OnInit {
   }
 
   cleanDate(dateStr: string): string {
-    return dateStr.replace(/•/g, '').trim();
+    return dateStr.replace(/•/g, '').replace(/\s*(Modifié|Edited)\s*$/i, '').replace(/\s+/g, ' ').trim();
   }
 }

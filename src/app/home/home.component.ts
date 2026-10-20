@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CusorComponent } from "../cusor/cusor.component";
+import { CursorComponent } from "../cursor/cursor.component";
 import { HeaderComponent } from "../header/header.component";
 import { HeroComponent } from "./hero/hero.component";
 import { AboutComponent } from "./about/about.component";
@@ -14,7 +14,7 @@ import { NavComponent } from "../nav/nav.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CusorComponent,
+  imports: [CursorComponent,
     HeaderComponent,
     HeroComponent, AboutComponent, ServicesComponent, PortfolioComponent, TestimonialsComponent, BlogComponent, ContactComponent, FooterComponent, CompanyComponent, NavComponent],
   templateUrl: './home.component.html',
@@ -27,7 +27,7 @@ export class HomeComponent {
 //
 // import { Component, HostListener } from '@angular/core';
 // import { CommonModule } from '@angular/common';
-// import { CusorComponent } from "../cusor/cusor.component";
+// import { CursorComponent } from "../cursor/cursor.component";
 // import { HeaderComponent } from "../header/header.component";
 // import { HeroComponent } from "./hero/hero.component";
 // import { AboutComponent } from "./about/about.component";
@@ -44,7 +44,7 @@ export class HomeComponent {
 //   standalone: true,
 //   imports: [
 //     CommonModule,
-//     CusorComponent,
+//     CursorComponent,
 //     HeaderComponent,
 //     HeroComponent,
 //     AboutComponent,

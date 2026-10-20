@@ -43,3 +43,9 @@
     will-change: transform;
     transition: transform 0.05s linear;
 }
+
+/* Bootstrap rows (negative gutters) overflow the viewport by a few px on small screens */
+html,
+body {
+    overflow-x: clip;
+}

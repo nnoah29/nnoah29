@@ -81,7 +81,8 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "allowedHosts": ["archnoah.tail8eb139.ts.net"]
+            "allowedHosts": ["archnoah.tail8eb139.ts.net"],
+            "proxyConfig": "proxy.conf.json"
           }
         },
         "extract-i18n": {

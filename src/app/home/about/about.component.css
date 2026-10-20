@@ -66,7 +66,7 @@
     font-size: 20px;
     border: 1px solid var(--main-color);
     padding: 10px 14px;
-    border-radius: 3pz;
+    border-radius: 3px;
 }
 
 .about-image-part .dot-shape {
@@ -189,8 +189,9 @@ h2.about-pre-title {
     display: block;
     line-height: 1;
     margin-bottom: 20px;
-    font-family: 'Fjalla One', sans-serif;
-    opacity: 0.5;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
     font-size: 14px;
 }
 
@@ -223,7 +224,7 @@ h2.about-pre-title {
 
 .some-word2 h4 {
     margin-top: 5px;
-    font-family: 'Fjalla One', sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 25px;
     line-height: 40px;
     text-transform: uppercase;
@@ -240,9 +241,8 @@ h2.about-pre-title {
     margin-bottom: 30px;
     font-size: 20px;
     line-height: 37px;
-    text-align: justify;
+    text-align: left;
     hyphens: auto;
-    word-break: break-word;
     overflow-wrap: break-word;
 }
 

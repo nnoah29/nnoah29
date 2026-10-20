@@ -1,22 +1,22 @@
-<section class="blog-area" , id="blog">
+<section class="blog-area" id="blog">
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12">
                 <div class="section-title wow fadeInUp delay-0-2s">
-                    <h2>Stories</h2>
+                    <h2>{{ 'blog.title' | translate }}</h2>
                 </div>
             </div>
         </div>
         @if (loading) {
         <div class="row">
             <div class="col-12 text-center" style="padding: 50px 0;">
-                <p style="color: var(--white-color);">Loading stories...</p>
+                <p style="color: var(--white-color);">{{ 'blog.loading' | translate }}</p>
             </div>
         </div>
         } @else if (error) {
         <div class="row">
             <div class="col-12 text-center" style="padding: 50px 0;">
-                <p class="text-danger" style="color: red;">Failed to load stories.</p>
+                <p class="text-danger" style="color: red;">{{ 'blog.error' | translate }}</p>
             </div>
         </div>
         } @else {
@@ -24,20 +24,20 @@
         <div class="row blog-post-box align-items-center">
             <div class="col-lg-6">
                 <div class="blog-post-img"><a [href]="post.url" target="_blank"><img
-                            [src]="post.image_url || 'assets/images/blog/blog2.jpg'" alt="LinkedIn Post"></a>
+                            [src]="post.image_url || 'assets/images/blog/blog2.jpg'" [alt]="'blog.postAlt' | translate"></a>
                     <div class="blog-post-category"><a [href]="post.url" target="_blank">LinkedIn</a></div>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="blog-post-caption">
-                    <h3 style="text-transform: none;">Posted {{ cleanDate(post.created_relative) }}</h3>
+                    <h3 style="text-transform: none;">{{ 'blog.posted' | translate }} · {{ cleanDate(post.created_relative) }}</h3>
                     <h2>
                         <a class="link-decoration" [href]="post.url" target="_blank"
                             style="font-size: 24px; text-transform: none; line-height: 1.5; font-weight: normal;">
                             {{ (post.text.length > 120) ? (post.text | slice:0:120) + '...' : post.text }}
                         </a>
                     </h2>
-                    <a class="theme-btn theme-btn-two" [href]="post.url" target="_blank">Read more on LinkedIn<i
+                    <a class="theme-btn theme-btn-two" [href]="post.url" target="_blank">{{ 'blog.readMore' | translate }}<i
                             class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
