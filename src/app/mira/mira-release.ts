@@ -8,6 +8,9 @@ export const FALLBACK_VERSION = '1.0.3';
 
 export const RELEASES_URL = 'https://github.com/nnoah29/MIRA/releases/';
 
+/** Online demo of the app (fictional data), served by GitHub Pages from the `web` branch. */
+export const DEMO_URL = 'https://nnoah29.github.io/MIRA/';
+
 /** Files published with a MIRA release, in the order of the download tabs (Debian, Fedora, AppImage, Arch, Android). */
 export function miraDownloads(version: string): Download[] {
   return [

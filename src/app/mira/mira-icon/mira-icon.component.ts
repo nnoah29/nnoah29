@@ -18,7 +18,8 @@ const PATHS = {
   check: 'M5 12l5 5 9-10',
   copy: 'M8 8h12v12H8zM4 16V4h12',
   plus: 'M12 5v14M5 12h14',
-  code: 'M8 7l-5 5 5 5M16 7l5 5-5 5'
+  code: 'M8 7l-5 5 5 5M16 7l5 5-5 5',
+  play: 'M7 4l13 8-13 8z'
 } as const;
 
 export type MiraIconName = keyof typeof PATHS;

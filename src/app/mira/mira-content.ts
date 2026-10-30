@@ -24,7 +24,7 @@ export interface MiraContent {
   skip: string;
   nav: { privacy: string; download: string; switchTo: string; switchLabel: string };
   footer: { credit: string; privacy: string; terms: string; source: string; contact: string };
-  hero: { title1: string; title2: string; lede: string; download: string; source: string; tags: string };
+  hero: { title1: string; title2: string; lede: string; download: string; demo: string; source: string; tags: string };
   shotAlt: string;
   featuresTitle: string;
   strengths: MiraStrength[];
@@ -52,6 +52,7 @@ export const MIRA_FR: MiraContent = {
     title2: 'en plus joli',
     lede: "MIRA lit et envoie vos mails, sur Linux et sur Android. Je l'ai faite parce que les clients mail que j'ai trouvés sous Linux ne me plaisaient pas : trop austères, payants, ou coincés dans un navigateur.",
     download: 'Télécharger MIRA',
+    demo: 'Essayer la démo',
     source: 'Code source',
     tags: 'Linux · Android · Gratuit · Licence MIT'
   },
@@ -112,6 +113,7 @@ export const MIRA_EN: MiraContent = {
     title2: 'but prettier',
     lede: "MIRA reads and sends your mail, on Linux and on Android. I made it because the mail clients I found on Linux didn't appeal to me: too austere, paid, or stuck in a browser.",
     download: 'Download MIRA',
+    demo: 'Try the demo',
     source: 'Source code',
     tags: 'Linux · Android · Free · MIT licence'
   },

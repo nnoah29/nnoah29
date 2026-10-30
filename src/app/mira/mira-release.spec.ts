@@ -1,4 +1,4 @@
-import { miraDownloads, miraFileUrl, versionOfTag } from './mira-release';
+import { DEMO_URL, miraDownloads, miraFileUrl, versionOfTag } from './mira-release';
 
 describe('mira-release', () => {
   it('names the files of a release after its version', () => {
@@ -21,6 +21,10 @@ describe('mira-release', () => {
     expect(miraFileUrl('1.0.3', 'MIRA-1.0.3-x86_64.AppImage')).toBe(
       'https://github.com/nnoah29/MIRA/releases/download/v1.0.3/MIRA-1.0.3-x86_64.AppImage'
     );
+  });
+
+  it('points the demo at the MIRA web app on GitHub Pages', () => {
+    expect(DEMO_URL).toBe('https://nnoah29.github.io/MIRA/');
   });
 
   it('reads the version out of a release tag', () => {

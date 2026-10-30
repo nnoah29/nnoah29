@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { MiraIconComponent } from '../mira-icon/mira-icon.component';
 import { MiraI18n } from '../mira-i18n';
-import { miraDownloads, miraFileUrl } from '../mira-release';
+import { DEMO_URL, miraDownloads, miraFileUrl } from '../mira-release';
 import { MiraReleaseService } from '../mira-release.service';
 
 const ACCOUNT_LOOK = [
@@ -30,6 +30,7 @@ export class MiraHomeComponent {
   private readonly release = inject(MiraReleaseService);
   private readonly files = computed(() => miraDownloads(this.release.version()));
 
+  readonly demoUrl = DEMO_URL;
   readonly installCommand = 'curl -fsSL https://github.com/nnoah29/MIRA/releases/latest/download/install.sh | bash';
   readonly selected = signal(0);
   readonly tabs = computed(() => this.i18n.content().systems.map(system => system.tab));
