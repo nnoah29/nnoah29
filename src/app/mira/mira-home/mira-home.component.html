@@ -6,6 +6,7 @@
       <p class="lede">{{ c.hero.lede }}</p>
       <div class="actions">
         <a class="button primary" [routerLink]="i18n.home()" fragment="telecharger"><app-mira-icon name="download" /> {{ c.hero.download }}</a>
+        <a class="button" [href]="demoUrl" target="_blank" rel="noopener"><app-mira-icon name="play" /> {{ c.hero.demo }}</a>
         <a class="button" href="https://github.com/nnoah29/MIRA"><app-mira-icon name="code" /> {{ c.hero.source }}</a>
       </div>
       <p class="label">{{ c.hero.tags }}</p>
