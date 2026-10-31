@@ -15,6 +15,7 @@
         <a [routerLink]="i18n.privacy()" routerLinkActive="active" ariaCurrentWhenActive="page">{{ c.nav.privacy }}</a>
       </nav>
       <a class="lang" [href]="otherLangUrl()" [attr.hreflang]="c.nav.switchTo.toLowerCase()" [attr.aria-label]="c.nav.switchLabel" (click)="switchLanguage($event)">{{ c.nav.switchTo }}</a>
+      <a class="portfolio" href="https://www.toffanoah.com" target="_blank" rel="noopener noreferrer">{{ c.nav.portfolio }}</a>
       <a class="cta" [routerLink]="i18n.home()" fragment="telecharger"><app-mira-icon name="download" /> {{ c.nav.download }}</a>
     </div>
   </header>
@@ -25,7 +26,7 @@
 
   <footer class="foot">
     <div class="wrap">
-      <span>{{ c.footer.credit }}</span>
+      <span>{{ c.footer.creditPrefix }}<a href="https://www.toffanoah.com" target="_blank" rel="noopener noreferrer">{{ c.footer.author }}</a>{{ c.footer.creditSuffix }}</span>
       <nav aria-label="Footer">
         <a [routerLink]="i18n.privacy()">{{ c.footer.privacy }}</a>
         <a [routerLink]="i18n.terms()">{{ c.footer.terms }}</a>

@@ -51,6 +51,25 @@
   </div>
 </section>
 
+<section class="band ai" id="assistant-ia">
+  <div class="wrap">
+    <div class="ai-copy">
+      <div class="ai-heading">
+        <h2><span>{{ c.ai.title1 }}</span><span>{{ c.ai.title2 }}<span class="caret"></span></span></h2>
+      </div>
+      <div class="ai-details">
+        <p class="ai-description">{{ c.ai.text }}</p>
+      </div>
+    </div>
+    <div class="ai-visual">
+      <figure class="ai-shot">
+        <img src="/assets/mira/img/mira-ai-settings.png" width="1920" height="1077" loading="lazy" [alt]="c.ai.imageAlt">
+      </figure>
+      <p class="ai-privacy"><app-mira-icon name="check" /> {{ c.ai.privacy }}</p>
+    </div>
+  </div>
+</section>
+
 <section class="band" id="telecharger">
   <div class="wrap">
     <h2>{{ c.downloadTitle }}<span class="caret"></span></h2>

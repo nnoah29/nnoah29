@@ -57,6 +57,8 @@
 .top nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
 .lang { padding: 10px 0; color: var(--muted); }
 .lang:hover { color: var(--accent); }
+.portfolio { display: inline-flex; align-items: center; justify-content: center; padding: 12px 14px; border: 1px solid var(--line-hi); color: var(--muted); font: 500 11px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
+.portfolio:hover { border-color: var(--accent); color: var(--accent); }
 .cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border: 1px solid var(--accent); color: var(--accent); }
 .cta app-mira-icon { font-size: 15px; }
 .cta:hover { background: var(--accent); color: var(--on-accent); }
@@ -71,9 +73,13 @@
   .top .wrap { gap: 20px; }
   .top nav { gap: 20px; }
   .top nav a.hide-sm { display: none; }
+  .portfolio { padding: 10px 9px; letter-spacing: .1em; }
   .cta { padding: 10px 12px; letter-spacing: .14em; }
 }
 @media (max-width: 420px) {
   .top nav { display: none; }
   .top .wrap { justify-content: space-between; }
+}
+@media (max-width: 360px) {
+  .portfolio { display: none; }
 }

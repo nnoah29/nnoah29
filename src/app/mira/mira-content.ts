@@ -22,12 +22,13 @@ export interface MiraDownloadText {
 export interface MiraContent {
   meta: { home: string; privacy: string; terms: string; description: string };
   skip: string;
-  nav: { privacy: string; download: string; switchTo: string; switchLabel: string };
-  footer: { credit: string; privacy: string; terms: string; source: string; contact: string };
+  nav: { privacy: string; download: string; portfolio: string; switchTo: string; switchLabel: string };
+  footer: { creditPrefix: string; author: string; creditSuffix: string; privacy: string; terms: string; source: string; contact: string };
   hero: { title1: string; title2: string; lede: string; download: string; demo: string; source: string; tags: string };
   shotAlt: string;
   featuresTitle: string;
   strengths: MiraStrength[];
+  ai: { title1: string; title2: string; text: string; imageAlt: string; privacy: string };
   accountsTitle: string;
   accounts: MiraAccountText[];
   downloadTitle: string;
@@ -45,8 +46,8 @@ export const MIRA_FR: MiraContent = {
     description: 'MIRA est un client mail pour Linux et Android, libre et gratuit. Un client mail comme un autre, en plus joli et plus amusant à utiliser.'
   },
   skip: 'Aller au contenu',
-  nav: { privacy: 'Confidentialité', download: 'Télécharger', switchTo: 'EN', switchLabel: 'View this page in English' },
-  footer: { credit: 'MIRA · Noah Toffa · Licence MIT', privacy: 'Confidentialité', terms: 'Conditions', source: 'Code source', contact: 'Contact' },
+  nav: { privacy: 'Confidentialité', download: 'Télécharger', portfolio: 'Mon site', switchTo: 'EN', switchLabel: 'View this page in English' },
+  footer: { creditPrefix: 'MIRA · ', author: 'Noah Toffa', creditSuffix: ' · Licence MIT', privacy: 'Confidentialité', terms: 'Conditions', source: 'Code source', contact: 'Contact' },
   hero: {
     title1: 'Juste un client mail,',
     title2: 'en plus joli',
@@ -66,6 +67,13 @@ export const MIRA_FR: MiraContent = {
     { label: 'Au quotidien', title: 'Les petits plus', text: 'Recherche dans tout le texte, reporter un mail à plus tard, annuler un envoi, programmer un message, raccourcis clavier.' },
     { label: 'Vie privée', title: 'Rien ne passe par chez moi', text: 'Aucun serveur MIRA. Les images distantes et les traceurs sont bloqués tant que vous ne les autorisez pas.' }
   ],
+  ai: {
+    title1: 'L’IA, dans votre',
+    title2: 'boîte mail',
+    text: 'Résumez un long fil, rédigez une réponse ou retrouvez une information sans quitter MIRA. Choisissez votre fournisseur et vos modèles : votre assistant s’adapte à votre façon de travailler.',
+    imageAlt: 'Paramètres de l’assistant IA de MIRA : choix du fournisseur, du modèle, du contenu accessible et des données sensibles à masquer.',
+    privacy: 'Vous gardez la main : choisissez les contenus accessibles et les données sensibles à masquer avant l’envoi.'
+  },
   accountsTitle: 'Vos comptes',
   accounts: [
     { name: 'Gmail', how: 'Connexion Google' },
@@ -106,8 +114,8 @@ export const MIRA_EN: MiraContent = {
     description: 'MIRA is a free, open-source mail client for Linux and Android. A mail client like any other, just prettier and more fun to use.'
   },
   skip: 'Skip to content',
-  nav: { privacy: 'Privacy', download: 'Download', switchTo: 'FR', switchLabel: 'Voir cette page en français' },
-  footer: { credit: 'MIRA · Noah Toffa · MIT licence', privacy: 'Privacy', terms: 'Terms', source: 'Source code', contact: 'Contact' },
+  nav: { privacy: 'Privacy', download: 'Download', portfolio: 'My website', switchTo: 'FR', switchLabel: 'Voir cette page en français' },
+  footer: { creditPrefix: 'MIRA · ', author: 'Noah Toffa', creditSuffix: ' · MIT licence', privacy: 'Privacy', terms: 'Terms', source: 'Source code', contact: 'Contact' },
   hero: {
     title1: 'Just a mail client,',
     title2: 'but prettier',
@@ -127,6 +135,13 @@ export const MIRA_EN: MiraContent = {
     { label: 'Day to day', title: 'Small extras', text: 'Full-text search, snooze a message, undo send, schedule a message, keyboard shortcuts.' },
     { label: 'Privacy', title: 'Nothing goes through me', text: 'No MIRA server. Remote images and trackers stay blocked until you allow them.' }
   ],
+  ai: {
+    title1: 'AI, inside your',
+    title2: 'inbox',
+    text: 'Summarise a long thread, draft a reply or find information without leaving MIRA. Choose your provider and models: your assistant adapts to the way you work.',
+    imageAlt: 'MIRA AI assistant settings: choose a provider, model, accessible content and sensitive data to hide.',
+    privacy: 'You stay in control: choose what the assistant can access and which sensitive data to hide before sending.'
+  },
   accountsTitle: 'Your accounts',
   accounts: [
     { name: 'Gmail', how: 'Google sign-in' },

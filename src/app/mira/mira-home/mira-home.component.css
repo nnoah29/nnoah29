@@ -49,6 +49,17 @@ h2 { margin-bottom: 56px; font: 400 clamp(40px, 5vw, 64px)/1 var(--display); tex
 .accounts .label { letter-spacing: .16em; font-size: 10px; }
 .avatar { display: grid; place-items: center; flex: none; width: 56px; height: 56px; color: #1b1b1b; font: 500 13px/1 var(--mono); letter-spacing: .08em; }
 
+.ai > .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
+.ai-copy { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .8fr); align-items: start; gap: 48px; }
+.ai-copy h2 { margin: 0; line-height: 1.12; }
+.ai-copy h2 > span { display: block; }
+.ai-description { max-width: 48ch; color: var(--muted); font-size: 17px; }
+.ai-visual { display: grid; gap: 12px; }
+.ai-privacy { display: flex; align-items: flex-start; gap: 8px; margin: 0; color: var(--muted); font-size: 12px; }
+.ai-privacy app-mira-icon { flex: none; margin-top: 2px; color: var(--accent); }
+.ai-shot { min-width: 0; margin: 0; padding: 8px; border: 1px solid var(--line-hi); background: var(--panel); box-shadow: 0 30px 90px -45px rgba(0, 0, 0, .9); }
+.ai-shot img { display: block; width: 100%; height: auto; }
+
 .tabs { display: flex; flex-wrap: wrap; gap: 0 32px; border-bottom: 1px solid var(--line); }
 .tabs button { padding: 0 0 14px; margin-bottom: -1px; border: 0; border-bottom: 2px solid transparent; background: none; color: var(--muted); font: 500 11px/1 var(--mono); letter-spacing: .22em; text-transform: uppercase; cursor: pointer; }
 .tabs button:hover { color: var(--strong); }
@@ -66,6 +77,7 @@ h2 { margin-bottom: 56px; font: 400 clamp(40px, 5vw, 64px)/1 var(--display); tex
   .intro { grid-template-columns: minmax(0, 1fr); margin-top: 40px; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .accounts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ai-copy { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
 @media (max-width: 640px) {
   .hero { padding: 56px 0 48px; }
