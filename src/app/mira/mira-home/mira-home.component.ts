@@ -1,4 +1,4 @@
-import { Component, DestroyRef, computed, effect, inject, signal } from '@angular/core';
+import { AfterViewInit, Component, DestroyRef, ElementRef, computed, effect, inject, signal } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterLink } from '@angular/router';
 import { MiraIconComponent } from '../mira-icon/mira-icon.component';
@@ -20,8 +20,9 @@ const ACCOUNT_LOOK = [
   templateUrl: './mira-home.component.html',
   styleUrl: './mira-home.component.css'
 })
-export class MiraHomeComponent {
+export class MiraHomeComponent implements AfterViewInit {
   readonly i18n = inject(MiraI18n);
+  private readonly host = inject(ElementRef<HTMLElement>);
 
   readonly accounts = computed(() =>
     this.i18n.content().accounts.map((account, index) => ({ ...account, ...ACCOUNT_LOOK[index] }))
@@ -40,11 +41,39 @@ export class MiraHomeComponent {
   readonly copied = signal<string | null>(null);
 
   private copyTimer?: ReturnType<typeof setTimeout>;
+  private revealObserver?: IntersectionObserver;
 
   constructor() {
     const title = inject(Title);
     effect(() => title.setTitle(this.i18n.content().meta.home));
-    inject(DestroyRef).onDestroy(() => clearTimeout(this.copyTimer));
+    inject(DestroyRef).onDestroy(() => {
+      clearTimeout(this.copyTimer);
+      this.revealObserver?.disconnect();
+    });
+  }
+
+  ngAfterViewInit(): void {
+    if (typeof window === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches || typeof IntersectionObserver === 'undefined') {
+      return;
+    }
+
+    const root = this.host.nativeElement as HTMLElement;
+    const targets = root.querySelectorAll<HTMLElement>('[data-reveal]');
+    if (targets.length === 0) return;
+
+    root.classList.add('motion-ready');
+    this.revealObserver = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+
+    targets.forEach((target, index) => {
+      target.style.setProperty('--reveal-delay', `${(index % 4) * 90}ms`);
+      this.revealObserver?.observe(target);
+    });
   }
 
   select(index: number): void {
