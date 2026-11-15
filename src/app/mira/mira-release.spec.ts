@@ -6,8 +6,8 @@ describe('mira-release', () => {
     expect(files).toEqual([
       'mira-mail_1.0.3_amd64.deb',
       'mira-mail-1.0.3-1.x86_64.rpm',
-      'MIRA-1.0.3-x86_64.AppImage',
       'mira-mail-1.0.3-x86_64.tar.gz',
+      'mira-mail-1.0.3-windows-x64-setup.exe',
       'mira-mail-1.0.3-android-arm64-v8a.apk'
     ]);
   });
@@ -18,8 +18,8 @@ describe('mira-release', () => {
   });
 
   it('points a file at the release of its version', () => {
-    expect(miraFileUrl('1.0.3', 'MIRA-1.0.3-x86_64.AppImage')).toBe(
-      'https://github.com/nnoah29/MIRA/releases/download/v1.0.3/MIRA-1.0.3-x86_64.AppImage'
+    expect(miraFileUrl('2.3.0', 'mira-mail-2.3.0-windows-x64-setup.exe')).toBe(
+      'https://github.com/nnoah29/MIRA/releases/download/v2.3.0/mira-mail-2.3.0-windows-x64-setup.exe'
     );
   });
 

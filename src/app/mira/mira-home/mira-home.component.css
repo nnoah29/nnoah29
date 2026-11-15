@@ -50,7 +50,7 @@ h2 { margin-bottom: 56px; font: 400 clamp(40px, 5vw, 64px)/1 var(--display); tex
 .avatar { display: grid; place-items: center; flex: none; width: 56px; height: 56px; color: #1b1b1b; font: 500 13px/1 var(--mono); letter-spacing: .08em; }
 
 .ai > .wrap { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; }
-.ai-copy { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .8fr); align-items: start; gap: 48px; }
+.ai-copy { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .8fr); align-items: end; gap: 48px; }
 .ai-copy h2 { margin: 0; line-height: 1.12; }
 .ai-copy h2 > span { display: block; }
 .ai-description { max-width: 48ch; color: var(--muted); font-size: 17px; }

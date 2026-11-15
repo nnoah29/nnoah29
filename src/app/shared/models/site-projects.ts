@@ -13,7 +13,7 @@ export const SITE_PROJECTS: readonly Project[] = [
     homepage: null,
     image_url: null,
     image_base64: null,
-    technologies: ['Linux', 'Android', 'MIT'],
+    technologies: ['Linux', 'Windows', 'Android', 'MIT'],
     stars: 0,
     category: null,
     route: 'mira'

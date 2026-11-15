@@ -40,10 +40,10 @@ export interface MiraContent {
 
 export const MIRA_FR: MiraContent = {
   meta: {
-    home: 'MIRA — un client mail pour Linux et Android',
+    home: 'MIRA — un client mail pour Linux, Windows et Android',
     privacy: 'Confidentialité — MIRA',
     terms: "Conditions d'utilisation — MIRA",
-    description: 'MIRA est un client mail pour Linux et Android, libre et gratuit. Un client mail comme un autre, en plus joli et plus amusant à utiliser.'
+    description: 'MIRA est un client mail pour Linux, Windows et Android, libre et gratuit. Un client mail comme un autre, en plus joli et plus amusant à utiliser.'
   },
   skip: 'Aller au contenu',
   nav: { privacy: 'Confidentialité', download: 'Télécharger', portfolio: 'Mon site', switchTo: 'EN', switchLabel: 'View this page in English' },
@@ -51,11 +51,11 @@ export const MIRA_FR: MiraContent = {
   hero: {
     title1: 'Juste un client mail,',
     title2: 'en plus joli',
-    lede: "MIRA lit et envoie vos mails, sur Linux et sur Android. Je l'ai faite parce que les clients mail que j'ai trouvés sous Linux ne me plaisaient pas : trop austères, payants, ou coincés dans un navigateur.",
+    lede: "MIRA lit et envoie vos mails, sur Linux, sur Windows et sur Android. Je l'ai faite parce que les clients mail que j'ai trouvés sous Linux ne me plaisaient pas : trop austères, payants, ou coincés dans un navigateur.",
     download: 'Télécharger MIRA',
     demo: 'Essayer la démo',
     source: 'Code source',
-    tags: 'Linux · Android · Gratuit · Licence MIT'
+    tags: 'Linux · Windows · Android · Gratuit · Licence MIT'
   },
   shotAlt: "La fenêtre de MIRA : dossiers à gauche, boîte de réception au centre, lettre d'information ouverte à droite.",
   featuresTitle: "Ce qu'il y a dedans",
@@ -85,8 +85,8 @@ export const MIRA_FR: MiraContent = {
   systems: [
     { tab: 'Debian, Ubuntu', system: 'Debian, Ubuntu, Mint, Pop!_OS' },
     { tab: 'Fedora', system: 'Fedora, RHEL, Rocky, Alma, openSUSE' },
-    { tab: 'AppImage', system: 'Toute distribution Linux' },
     { tab: 'Arch', system: 'Arch, Manjaro, EndeavourOS' },
+    { tab: 'Windows', system: 'Windows 10 et suivants (expérimental)' },
     { tab: 'Android', system: 'Téléphones Android 7 et suivants' }
   ],
   download: {
@@ -99,7 +99,7 @@ export const MIRA_FR: MiraContent = {
     systemLabel: 'Système'
   },
   requirements: {
-    before: 'Linux : glibc 2.34 ou plus récente (Ubuntu 22.04, Debian 12, Fedora 35 et suivantes) et GTK 3. Pour ranger les mots de passe, un trousseau comme GNOME Keyring ou KWallet. Sommes de contrôle publiées avec chaque ',
+    before: 'Linux : glibc 2.34 ou plus récente (Ubuntu 22.04, Debian 12, Fedora 35 et suivantes) et GTK 3. Pour ranger les mots de passe, un trousseau comme GNOME Keyring ou KWallet. Windows : installation pour l’utilisateur courant, sans droits administrateur ; l’installeur n’est pas encore signé, donc SmartScreen avertit au premier lancement (« Informations complémentaires » puis « Exécuter quand même »). Sommes de contrôle publiées avec chaque ',
     link: 'version',
     after: '.'
   },
@@ -108,10 +108,10 @@ export const MIRA_FR: MiraContent = {
 
 export const MIRA_EN: MiraContent = {
   meta: {
-    home: 'MIRA — a mail client for Linux and Android',
+    home: 'MIRA — a mail client for Linux, Windows and Android',
     privacy: 'Privacy — MIRA',
     terms: 'Terms of use — MIRA',
-    description: 'MIRA is a free, open-source mail client for Linux and Android. A mail client like any other, just prettier and more fun to use.'
+    description: 'MIRA is a free, open-source mail client for Linux, Windows and Android. A mail client like any other, just prettier and more fun to use.'
   },
   skip: 'Skip to content',
   nav: { privacy: 'Privacy', download: 'Download', portfolio: 'My website', switchTo: 'FR', switchLabel: 'Voir cette page en français' },
@@ -119,11 +119,11 @@ export const MIRA_EN: MiraContent = {
   hero: {
     title1: 'Just a mail client,',
     title2: 'but prettier',
-    lede: "MIRA reads and sends your mail, on Linux and on Android. I made it because the mail clients I found on Linux didn't appeal to me: too austere, paid, or stuck in a browser.",
+    lede: "MIRA reads and sends your mail, on Linux, on Windows and on Android. I made it because the mail clients I found on Linux didn't appeal to me: too austere, paid, or stuck in a browser.",
     download: 'Download MIRA',
     demo: 'Try the demo',
     source: 'Source code',
-    tags: 'Linux · Android · Free · MIT licence'
+    tags: 'Linux · Windows · Android · Free · MIT licence'
   },
   shotAlt: 'The MIRA window: folders on the left, inbox in the middle, a newsletter open on the right.',
   featuresTitle: "What's inside",
@@ -153,8 +153,8 @@ export const MIRA_EN: MiraContent = {
   systems: [
     { tab: 'Debian, Ubuntu', system: 'Debian, Ubuntu, Mint, Pop!_OS' },
     { tab: 'Fedora', system: 'Fedora, RHEL, Rocky, Alma, openSUSE' },
-    { tab: 'AppImage', system: 'Any Linux distribution' },
     { tab: 'Arch', system: 'Arch, Manjaro, EndeavourOS' },
+    { tab: 'Windows', system: 'Windows 10 and later (experimental)' },
     { tab: 'Android', system: 'Phones running Android 7 and later' }
   ],
   download: {
@@ -167,7 +167,7 @@ export const MIRA_EN: MiraContent = {
     systemLabel: 'System'
   },
   requirements: {
-    before: 'Linux: glibc 2.34 or newer (Ubuntu 22.04, Debian 12, Fedora 35 and later) and GTK 3. To store passwords, a keyring such as GNOME Keyring or KWallet. Checksums are published with each ',
+    before: 'Linux: glibc 2.34 or newer (Ubuntu 22.04, Debian 12, Fedora 35 and later) and GTK 3. To store passwords, a keyring such as GNOME Keyring or KWallet. Windows: installs for the current user without administrator rights; the installer is not signed yet, so SmartScreen warns on first launch (choose More info, then Run anyway). Checksums are published with each ',
     link: 'release',
     after: '.'
   },
