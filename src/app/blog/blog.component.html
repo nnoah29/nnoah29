@@ -31,7 +31,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="blog-post-caption">
-                    <h3 style="text-transform: none;">{{ 'blog.posted' | translate }} · {{ cleanDate(post.created_relative) }}</h3>
+                    <h3 style="text-transform: none;">{{ 'blog.posted' | translate }} · {{ formatDate(post.created_at) }}</h3>
                     <h2>
                         <a class="link-decoration" [href]="post.url" target="_blank"
                             style="font-size: 24px; text-transform: none; line-height: 1.5; font-weight: normal;">

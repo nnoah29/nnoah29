@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 export interface LinkedInPost {
   id: string;
@@ -23,6 +23,7 @@ export class BlogComponent implements OnInit {
   loading = true;
   error = false;
   private http = inject(HttpClient);
+  private translate = inject(TranslateService);
 
   ngOnInit(): void {
     this.http.get<{ posts: LinkedInPost[], total: number, cached: boolean }>('https://nnoah29-backend.vercel.app/api/linkedin/posts')
@@ -39,7 +40,12 @@ export class BlogComponent implements OnInit {
       });
   }
 
-  cleanDate(dateStr: string): string {
-    return dateStr.replace(/•/g, '').replace(/\s*(Modifié|Edited)\s*$/i, '').replace(/\s+/g, ' ').trim();
+  formatDate(isoDate: string): string {
+    const date = new Date(isoDate);
+    if (isNaN(date.getTime())) {
+      return '';
+    }
+    const lang = this.translate.currentLang || this.translate.defaultLang || 'fr';
+    return date.toLocaleDateString(lang, { month: 'long', year: 'numeric' });
   }
 }
