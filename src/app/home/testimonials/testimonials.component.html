@@ -1,3 +1,4 @@
+@if (testimonials.length > 0) {
 <section class="testi-editorial-area" id="testimonials">
   <div class="testi-container">
     <div class="row">
@@ -17,22 +18,25 @@
       <div class="testi-content">
         <!-- Quote -->
         <blockquote class="testi-quote" [class.transitioning]="isTransitioning()">
-          {{ 'testimonials.items.' + active() + '.quote' | translate }}
+          {{ quoteOf(current()) }}
         </blockquote>
 
         <!-- Author info with hover reveal -->
         <div class="testi-author-wrapper" [class.transitioning]="isTransitioning()">
           <div class="testi-author-info">
             <div class="testi-avatar-box">
-              <img [src]="current().image" [alt]="'testimonials.items.' + active() + '.author' | translate"
-                class="testi-avatar" />
+              @if (current().image_url) {
+              <img [src]="current().image_url" [alt]="current().author" class="testi-avatar" />
+              } @else {
+              <span class="testi-avatar testi-avatar-initials">{{ initials(current().author) }}</span>
+              }
             </div>
             <div>
-              <p class="testi-author-name">{{ 'testimonials.items.' + active() + '.author' | translate }}</p>
+              <p class="testi-author-name">{{ current().author }}</p>
               <p class="testi-author-role">
-                {{ 'testimonials.items.' + active() + '.role' | translate }}
-                <span class="testi-separator">/</span>
-                <span class="testi-company">{{ 'testimonials.items.' + active() + '.company' | translate }}</span>
+                {{ current().role }}
+                @if (current().role && current().company) {<span class="testi-separator">/</span>}
+                <span class="testi-company">{{ current().company }}</span>
               </p>
             </div>
           </div>
@@ -75,3 +79,4 @@
     </div>
   </div>
 </section>
+}

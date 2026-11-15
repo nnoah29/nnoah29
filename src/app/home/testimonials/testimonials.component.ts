@@ -1,10 +1,15 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, OnInit, signal, computed, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-import { TranslateModule } from '@ngx-translate/core';
-
-interface Testimonial {
-  id: number;
-  image: string;
+export interface Testimonial {
+  id: string;
+  quote: string;
+  quote_en: string | null;
+  author: string;
+  role: string;
+  company: string;
+  image_url: string | null;
 }
 
 @Component({
@@ -14,27 +19,35 @@ interface Testimonial {
   templateUrl: './testimonials.component.html',
   styleUrl: './testimonials.component.css',
 })
-export class TestimonialsComponent {
-  testimonials: Testimonial[] = [
-    {
-      id: 1,
-      image: 'https://plus.unsplash.com/premium_photo-1689551671548-79ff30459d2a?w=900&auto=format&fit=crop&q=60',
-    },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1649123245135-4db6ead931b5?w=900&auto=format&fit=crop&q=60',
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1701615004837-40d8573b6652?w=900&auto=format&fit=crop&q=60',
-    },
+export class TestimonialsComponent implements OnInit {
+  private http = inject(HttpClient);
+  private translate = inject(TranslateService);
+  testimonials: Testimonial[] = [];
 
-  ];
+  ngOnInit(): void {
+    this.http.get<{ testimonials: Testimonial[] }>('https://nnoah29-backend.vercel.app/api/testimonials')
+      .subscribe({
+        next: (data) => {
+          this.testimonials = data.testimonials;
+          this.active.set(0);
+        },
+        error: () => (this.testimonials = []),
+      });
+  }
 
   active = signal(0);
   isTransitioning = signal(false);
 
   current = computed(() => this.testimonials[this.active()]);
+
+  quoteOf(item: Testimonial): string {
+    const lang = this.translate.currentLang || this.translate.defaultLang || 'fr';
+    return lang === 'en' && item.quote_en ? item.quote_en : item.quote;
+  }
+
+  initials(name: string): string {
+    return name.split(/\s+/).filter(Boolean).slice(0, 2).map((w) => w[0].toUpperCase()).join('');
+  }
 
   padIndex(n: number): string {
     return String(n).padStart(2, '0');
