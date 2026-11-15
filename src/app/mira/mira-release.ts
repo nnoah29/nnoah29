@@ -4,20 +4,20 @@ export interface Download {
 }
 
 /** Version shown when the GitHub API can't be reached (offline visitor, rate limit): bump it with each release. */
-export const FALLBACK_VERSION = '1.0.3';
+export const FALLBACK_VERSION = '2.3.0';
 
 export const RELEASES_URL = 'https://github.com/nnoah29/MIRA/releases/';
 
 /** Online demo of the app (fictional data), served by GitHub Pages from the `web` branch. */
 export const DEMO_URL = 'https://nnoah29.github.io/MIRA/';
 
-/** Files published with a MIRA release, in the order of the download tabs (Debian, Fedora, AppImage, Arch, Android). */
+/** Files published with a MIRA release, in the order of the download tabs (Debian, Fedora, Arch, Windows, Android). */
 export function miraDownloads(version: string): Download[] {
   return [
     { file: `mira-mail_${version}_amd64.deb`, command: `sudo apt install ./mira-mail_${version}_amd64.deb` },
     { file: `mira-mail-${version}-1.x86_64.rpm`, command: `sudo dnf install ./mira-mail-${version}-1.x86_64.rpm` },
-    { file: `MIRA-${version}-x86_64.AppImage`, command: `chmod +x MIRA-${version}-x86_64.AppImage && ./MIRA-${version}-x86_64.AppImage` },
     { file: `mira-mail-${version}-x86_64.tar.gz`, command: `tar xzf mira-mail-${version}-x86_64.tar.gz` },
+    { file: `mira-mail-${version}-windows-x64-setup.exe` },
     { file: `mira-mail-${version}-android-arm64-v8a.apk` }
   ];
 }
